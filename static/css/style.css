@@ -1,0 +1,13 @@
+.nav-link {
+    font-size: 12px !important;
+}
+
+.navbar-brand {
+    font-family: 'Cinzel', serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
