@@ -1,13 +1,25 @@
 .nav-link {
-    font-size: 12px !important;
+    font-size: 14px !important;
 }
 
 .navbar-brand {
     font-family: 'Cinzel', serif;
 }
 
+.nav-item {
+    text-align: right;
+}
+
 img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+#img1 {
+    margin-top: 10px;
+} 
+
+.card {
+    box-shadow: 0 1px 5px rgba(104,104,104,0.8);
 }
