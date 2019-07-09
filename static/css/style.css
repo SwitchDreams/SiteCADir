@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 .nav-link {
     font-size: 14px !important;
 }
@@ -22,4 +27,49 @@ img {
 
 .card {
     box-shadow: 0 1px 5px rgba(104,104,104,0.8);
+}
+
+#home {
+    background: url('../../media/law.jpg') no-repeat center center fixed;
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
+.landing-text {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.landing-text h1 {
+    font-size: 500%;
+    font-weight: 700;
+    color:lightgrey;
+}
+.landing-text h3 {
+    color:lightgrey;
+}
+
+.padding {
+    padding: 80px 0px;
+}
+
+.padding img {
+    width: 100%;
+}
+
+#fixed {
+    background: url('../../media/martelo.jpg') no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
+.ver-mais {
+    padding: 30px 0;
 }
