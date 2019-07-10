@@ -134,3 +134,98 @@ hr.socket {
 /* .shadow {
     box-shadow: 0 1px 5px rgba(104,104,104,0.8);
 } */
+
+/* Mini Time Line de Eventos */
+.data {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    padding: 15px 20px;
+    border-radius: 50%;
+    background-color: #6bd5ed;
+    color: #4c4d4a;
+    max-height: 100px;
+    z-index: 2;
+}
+
+.auxiliar-path.row {
+    display: flex;
+}
+
+.auxiliar-path.row .col-2 {
+    display: inline-flex;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+}
+
+.auxiliar-path.row .col-2::after {
+    content: "";
+    position: absolute;
+    border-left: 3px solid #6bd5ed;
+    z-index: 1;
+}
+
+.auxiliar-path.row .col-2.bottom::after {
+    height: 50%;
+    left: 50%;
+    top: 50%;
+}
+
+.auxiliar-path.row .col-2.full::after {
+    height: 100%;
+    left: calc(50% - 3px);
+}
+
+.auxiliar-path.row .col-2.top::after {
+    height: 50%;
+    left: 50%;
+    top: 0;
+}
+
+.path div {
+    padding: 0;
+    height: 40px;
+}
+
+.path hr {
+    border-top: 3px solid #6bd5ed;
+    margin: 0;
+    top: 17px;
+    position: relative;
+}
+
+.path .col-2 {
+    display: flex;
+    overflow: hidden;
+}
+
+.path .top-right {
+    left: 50%;
+    top: -50%;
+}
+
+.path .left-bottom {
+    left: -50%;
+    top: calc(50% - 3px);
+}
+
+.path .top-left {
+    left: -50%;
+    top: -50%;
+}
+
+.path .right-bottom {
+    left: 50%;
+    top: calc(50% - 3px);
+}
+
+.path .corner {
+    border: 3px solid #6bd5ed;
+    width: 100%;
+    position: relative;
+    border-radius: 15px;
+}
+
+.event-title {
+    font-family: 'Cinzel', serif;
+}
