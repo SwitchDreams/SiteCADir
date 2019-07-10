@@ -1,10 +1,17 @@
+/* Alteraçoes referentes a pagina inteira */
 html, body {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
+/* body {
+    overflow-x: hidden;
+} */
+
+/* Estilos das nav bar */
 .nav-link {
-    font-size: 14px !important;
+    font-size: 16px !important;
 }
 
 .navbar-brand {
@@ -30,7 +37,8 @@ img {
 }
 
 #home {
-    background: url('../../media/law.jpg') no-repeat center center fixed;
+    /* background: url('../../media/law.jpg') no-repeat center center fixed; */
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../media/law.jpg') no-repeat center center fixed;
     display: table;
     height: 100%;
     position: relative;
@@ -72,4 +80,30 @@ img {
 
 .ver-mais {
     padding: 30px 0;
+}
+
+/* Slider */
+
+.carousel-item {
+    height: 100vh;
+}
+
+footer {
+    color: white;
+    padding: 2rem 0 3rem;
+    margin-top: 1rem;
+}
+
+footer a {
+    color: white;
+}
+
+footer svg.svg-inline--fa {
+    font-size: 1.6rem;
+    margin: 1.2rem .5 0 0;
+}
+
+hr.socket {
+    border-top: .2rem solid #666b71;
+    width: 100%;
 }
