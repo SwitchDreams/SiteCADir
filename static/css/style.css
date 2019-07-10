@@ -39,15 +39,15 @@ img {
 
 #img1 {
     margin-top: 10px;
-} 
+}
 
 .card {
-    box-shadow: 0 1px 5px rgba(104,104,104,0.8);
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
 #home {
     /* background: url('../../media/law.jpg') no-repeat center center fixed; */
-    background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)), url('../../media/law.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../media/law.jpg') no-repeat center center fixed;
     display: table;
     height: 100%;
     position: relative;
@@ -64,10 +64,11 @@ img {
 .landing-text h1 {
     font-size: 500%;
     font-weight: 700;
-    color:lightgrey;
+    color: lightgrey;
 }
+
 .landing-text h3 {
-    color:lightgrey;
+    color: lightgrey;
 }
 
 .padding {
@@ -87,6 +88,15 @@ img {
     background-size: cover;
 }
 
+#fixed2 {
+    background: url('../../media/oculos.jpg') no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
 .ver-mais {
     padding: 30px 0;
 }
@@ -95,7 +105,7 @@ img {
 
 .carousel-item {
     height: 100vh;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .carousel-caption {
