@@ -46,7 +46,6 @@ img {
 
 .card {
     /* Adicionando uma largura máxima para não distorcer a imagem*/
-    max-width: 33%;
     box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -154,3 +153,22 @@ hr.socket {
     box-shadow: 0 1px 5px rgba(104,104,104,0.8);
 } */
 
+/* Horizontal Cards Programs*/
+.card-horizontal{
+    /* Adicionando uma largura máxima para não distorcer a imagem*/
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.card-horizontal-desc {
+    display: inline-block;
+    float: right;
+    width: 80%;
+    height: 150px;
+}
+.card-horizontal-img{
+    display: inline-block;
+    float: left;
+    width: 20%;
+    height: 150px;
+    align-content: center;
+}

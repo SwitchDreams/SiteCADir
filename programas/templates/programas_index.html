@@ -8,10 +8,11 @@
 
     <form action="" method="post">
         {% csrf_token %}
-        <div class="programa-tile"> {{ form }} <input class="btn btn-outline-dark" type="submit" value="Filtrar"> </div>
-
+        <div class="programa-tile"> {{ form }} <input class="btn btn-outline-dark" type="submit" value="Filtrar"></div>
     </form>
 
+    <br>
+    <!--
     <div class="padding">
         <div class="card-deck">
             {% for programa in Programas %}
@@ -27,5 +28,23 @@
                 </div>
             {% endfor %}
         </div>
+    </div>-->
+
+    <div class="card" style="width: 100%;">
+        <ul class="list-group list-group-flush">
+            {% for programa in Programas %}
+                <li class="list-group-item">
+                    <div class="contain">
+                        <div class="card-horizontal-img">
+                            <a href=" {% url 'programas:show' pk=programa.id %} ">
+                                <img alt="Card image cap" src="{% get_media_prefix %}{{ programa.logo }}" width="128"
+                                     height="128"> </a>
+                            <h5>{{ programa.nome }}</h5>
+                        </div>
+                        <div class="card-horizontal-desc"> {{ programa.text|truncatewords:60 }} </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}
