@@ -45,6 +45,8 @@ img {
 }
 
 .card {
+    /* Adicionando uma largura máxima para não distorcer a imagem*/
+    max-width: 33%;
     box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -144,6 +146,10 @@ hr.socket {
     width: 100%;
 }
 
+.programa-tile {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+}
 /* .shadow {
     box-shadow: 0 1px 5px rgba(104,104,104,0.8);
 } */

@@ -12,4 +12,4 @@ class SelectPrograma(forms.Form):
         ('OUT', 'Outros'),
 
     )
-    field = forms.ChoiceField(label='tipo', widget=forms.Select, choices=CHOICES)
+    field = forms.ChoiceField(label='' , widget=forms.Select(attrs={'class':'selectpicker btn-outline-dark'}), choices=CHOICES)
