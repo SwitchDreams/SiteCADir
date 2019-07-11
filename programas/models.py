@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Programa(models.Model):
+    # Quando alterar tipo choices, atualizar o forms.py
     TIPOS_CHOICES = (
         ('ATL', 'Atlética'),
         ('EJ', 'Empresa Junior'),

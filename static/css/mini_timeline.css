@@ -21,6 +21,10 @@
     justify-content: center;
 }
 
+.event-title {
+    font-family: 'Cinzel', serif;
+}
+
 .auxiliar-path.row .col-2.full::after {
     height: 100%;
     left: calc(50% - 3px);
@@ -87,8 +91,4 @@
     width: 100%;
     position: relative;
     border-radius: 15px;
-}
-
-.event-title {
-    font-family: 'Cinzel', serif;
 }
