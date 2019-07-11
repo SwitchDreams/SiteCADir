@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block content %}
 
     <!-- Cartao de visitas do site -->
@@ -118,53 +119,21 @@
         </div>
     </div>
 
-    <!-- Area que seria uma preview dos programas Estudantis
-            Nao tem como fazer um cartão pra todo mundo, tentar
-            deixar de um jeito que fique rodando aleatoriamente -->
+    <!-- Escolhe Aleatoriamente 4 Programas -->
     <div class="padding">
         <div class="card-deck">
+            {% for programa in Programas %}
             <div data-aos="flip-left" class="card" style="width: 18rem;">
-                <img alt="Card image cap" class="card-img-top" src="../../media/olimpia.jpeg">
+                <img alt="Card image cap" class="card-img-top" src={% get_media_prefix %}{{ programa.logo }}>
                 <div class="card-body">
-                    <h5 class="card-title text-center">Atlética</h5>
-                    <p align="justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui dolorum ab
-                        placeat sunt! Saepe officia eius error, aut tempora natus dicta, laudantium consectetur rerum
-                        eveniet eum enim quis harum.</p>
+                    <h5 class="card-title text-center">{{ programa.nome }}</h5>
+                    <p align="justify">{{ programa.text|truncatewords:25 }}</p>
                 </div>
             </div>
-            <div data-aos="flip-left"
-                 class="card" style="width: 18rem;">
-                <img alt="Card image cap" class="card-img-top" src="../../media/advocatta.jpeg">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Empresa Júnior</h5>
-                    <p align="justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui dolorum ab
-                        placeat sunt! Saepe officia eius error, aut tempora natus dicta, laudantium consectetur rerum
-                        eveniet eum enim quis harum.</p>
-                </div>
-            </div>
-            <div data-aos="flip-left"
-                 class="card" style="width: 18rem;">
-                <img alt="Card image cap" class="card-img-top" src="../../media/pet.png">
-                <div class="card-body">
-                    <h5 class="card-title text-center">PET Direito</h5>
-                    <p align="justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui dolorum ab
-                        placeat sunt! Saepe officia eius error, aut tempora natus dicta, laudantium consectetur rerum
-                        eveniet eum enim quis harum.</p>
-                </div>
-            </div>
-            <div data-aos="flip-left"
-                 class="card" style="width: 18rem;">
-                <img alt="Card image cap" class="card-img-top" src="../../media/direito_wtf.jpeg">
-                <div class="card-body">
-                    <h5 class="card-title text-center">A Faculdade</h5>
-                    <p align="justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui dolorum ab
-                        placeat sunt! Saepe officia eius error, aut tempora natus dicta, laudantium consectetur rerum
-                        eveniet eum enim quis harum.</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="text-center ver-mais">
-            <a class="btn btn-primary" href="#">Ver Mais Programas</a>
+            <a class="btn btn-primary" href="{% url 'programas:index' %}">Ver Mais Programas</a>
         </div>
     </div>
 
