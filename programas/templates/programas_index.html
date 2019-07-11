@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for programa in Programas %}
+        <h1> {{ programa.nome }} </h1>
+        <p> {{ programa.text }}</p>
+        <a href=" {% url 'programas:show' pk=programa.id %} "> Página individual </a>
+    {% endfor %}
+{% endblock %}
