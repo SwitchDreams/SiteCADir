@@ -1,81 +1,120 @@
 <!doctype html>
 {% load static %}
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-        <meta content="ie=edge" http-equiv="X-UA-Compatible">
-        <meta content="Site CaDir" name="description"/>
-        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-        <link href="static/css/style.css" rel="stylesheet">
-        
-        <script src="static/js/vivus.js"></script>
-        <script crossorigin="anonymous" defer integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-        <title>Site CaDir</title>
-        <link rel="stylesheet" href="{% static "css/style.css" %}"/>
-        <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet"> 
-    </head>
-    <body>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
-            CADir UnB
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-university"></i>                                                                                                                                                                                                                                                                                                       
-                            Institucional
-                            <span class="sr-only">(current)</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i>
-                            Eventos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="far fa-file-alt"></i>
-                            Guias
-                        </a>
-                    </li>
-                    <li class="nav-item small">
-                        <a class="nav-link" href="#"><i class="fas fa-balance-scale"></i>
-                            Programas
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-phone-volume"></i>
-                            Ouvidoria
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="Site CaDir" name="description"/>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
 
-        {% block content %}{% endblock %}
+    <script src="static/js/vivus.js"></script>
+    <script crossorigin="anonymous" defer
+            integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
+            src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+    <title>Site CaDir</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 
-        <footer class="bg-dark">
-            <div class="row justify-content-center">
-                <div class="col-md-5 text-center">
-                    <h4>CADir UnB</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odio non nam, quibusdam ducimus dolorum necessitatibus similique voluptatem id nulla.</p>
-                    <strong>Contatos</strong>
-                    <p>cadirunb@unb.com.br</p>
-                    <a href=""><i class="fab fa-facebook-square"></i></a>
-                    <a href=""><i class="fab fa-twitter-square"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                </div>
-                <hr class="socket">
-                <h5>Powered by Switch Dreams &copy;</h5>
-            </div>
-        </footer>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        CADir UnB
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    </body>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-university"></i>
+                    Institucional
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i>
+                    Eventos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="far fa-file-alt"></i>
+                    Guias
+                </a>
+            </li>
+            <li class="nav-item small">
+                <a class="nav-link" href="#"><i class="fas fa-balance-scale"></i>
+                    Programas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-phone-volume"></i>
+                    Ouvidoria
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer class="bg-dark">
+    <div class="row justify-content-center">
+        <div class="col-md-5 text-center">
+            <h4>CADir UnB</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odio non nam, quibusdam ducimus dolorum
+                necessitatibus similique voluptatem id nulla.</p>
+            <strong>Contatos</strong>
+            <p>cadirunb@unb.com.br</p>
+            <a href=""><i class="fab fa-facebook-square"></i></a>
+            <a href=""><i class="fab fa-twitter-square"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+        <hr class="socket">
+        <h5>Powered by Switch Dreams &copy;</h5>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+    });
+</script>
+
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="{% static 'js/main.js' %}">
+</script>
+</body>
 </html>
