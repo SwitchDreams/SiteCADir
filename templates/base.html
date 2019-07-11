@@ -8,22 +8,24 @@
     <meta content="Site CaDir" name="description"/>
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-    <link href="static/css/style.css" rel="stylesheet">
 
     <script src="static/js/vivus.js"></script>
     <script crossorigin="anonymous" defer
             integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
             src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
     <title>Site CaDir</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
     <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 
+    <!-- Our css -->
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/mini_timeline.css" %}"/>
+    <!-- AOS Library-->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{% url 'core:main' %}">
         CADir UnB
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -49,7 +51,7 @@
                 </a>
             </li>
             <li class="nav-item small">
-                <a class="nav-link" href="#"><i class="fas fa-balance-scale"></i>
+                <a class="nav-link" href="{% url 'programas:index' %}"><i class="fas fa-balance-scale"></i>
                     Programas
                 </a>
             </li>
@@ -62,7 +64,14 @@
     </div>
 </nav>
 
-{% block content %}{% endblock %}
+<!-- Usando Como Padding(Alterar Posteriormente) -->
+<br>
+<br>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
 
 <footer class="bg-dark">
     <div class="row justify-content-center">
