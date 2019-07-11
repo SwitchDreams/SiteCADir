@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for programa in Programas %}
-        <h1> {{ programa.nome }} </h1>
-        <p> {{ programa.text }}</p>
-        <a href=" {% url 'programas:show' pk=programa.id %} "> Página individual </a>
-    {% endfor %}
+<br>
+<section>
+    <form action="/programas/admin.py">
+        <select name="programas">
+            <option value="Programas">Programas</option>
+            {% for programa in Programas %}
+                <option value={{programa.nome}}>{{programa.nome}}</option>
+            {% endfor %}
+        </select>
+    </form>
+    <br>
+
+        {% for programa in Programas %}
+            <h1> {{ programa.nome }} </h1>
+            <p> {{ programa.text }}</p>
+            <a href=" {% url 'programas:show' pk=programa.id %} "> Página individual </a>
+            <br><br>
+        {% endfor %}
+</section>
 {% endblock %}
