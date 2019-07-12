@@ -1,0 +1,16 @@
+#programas-fixed {
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
+h1 {
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+.jumbotron {
+    background-color: white;
+}

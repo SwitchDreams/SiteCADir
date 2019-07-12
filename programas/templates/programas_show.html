@@ -3,6 +3,31 @@
 {% load static %}
 {% load staticfiles %}
 {% block content %}
-    <h1> {{ Programa.nome }} </h1>
-    <img src="{% get_media_prefix %}{{ Programa.logo }}" alt="Logo">
+    <!-- <img src="{% get_media_prefix %}{{ Programa.logo }}" alt="Logo"> -->
+    <div id="programas-fixed" style="background: url('{% get_media_prefix %}{{ Programa.show_img }}') no-repeat center center fixed;"></div>
+
+    <div class="container" style="padding: 20px 0;">
+        <div class="jumbotron jumbotron-fluid">
+            <h1 class="text-center font-weight-bold "> {{ Programa.nome }} </h1>
+            <p>{{Programa.text}}</p>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="row">
+                <div class="col">
+                    <a href="{{Programa.facebook}}"><i class="fab fa-facebook-square fa-5x"></i></a>
+                </div>
+                <div class="col">
+                    <a href="{{Programa.instagram}}"><i class="fab fa-instagram fa-5x"></i></a>
+                </div>
+                <div class="col">
+                    <a href="{{Programa.email}}"><i class="far fa-envelope fa-5x"></i></a>
+                </div>
+                <div class="col">
+                    <a href="{{Programa.site}}"><i class="fas fa-globe fa-5x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
