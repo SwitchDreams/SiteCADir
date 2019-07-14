@@ -133,3 +133,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static'),
 )
+
+# E-mail Configuration
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org'
+EMAIL_HOST_PASSWORD = '2f8e122b1b0af3afda69b774f281bc8d-afab6073-8319ae88'
+EMAIL_USE_TLS = True
