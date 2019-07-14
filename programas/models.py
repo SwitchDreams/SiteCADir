@@ -28,6 +28,7 @@ class Programa(models.Model):
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     site = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
     def __str__(self):
         return self.nome
 
