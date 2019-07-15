@@ -1,78 +1,25 @@
-/* Alteraçoes referentes a pagina inteira */
-html, body {
-    height: 100%;
-    width: 100%;
-    /*overflow-x: hidden;*/
-    margin: 0;
+/* FONTES */
+/* Cardo e Oswald */
+@import url('https://fonts.googleapis.com/css?family=Cardo|Oswald&display=swap');
+
+:root {
+    --cadir-blue-faded: #0016527c;
+    --cadir-blue: #001652;
+    --bg-white: #f3f3f3;
+    --bg-white-nav : #ececec;
 }
 
-.content {
-    min-height: 640px;
-}
-/* body {
-    overflow-x: hidden;
-} */
-
-/* Estilos das nav bar */
-.nav-link {
-    font-size: 16px !important;
+p {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: white;
-}
-
-.navbar-brand {
-    font-family: 'Cinzel', serif;
-}
-
-.nav-item {
-    text-align: right;
-}
-
-nav {
-    overflow: auto;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-#img1 {
-    margin-top: 10px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
 }
 
 .card {
     /* Adicionando uma largura máxima para não distorcer a imagem*/
     box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-}
-
-#home {
-    /* background: url('../../media/law.jpg') no-repeat center center fixed; */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../media/law.jpg') no-repeat center center fixed;
-    display: table;
-    height: 100%;
-    position: relative;
-    width: 100%;
-    background-size: cover;
-}
-
-.landing-text {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.landing-text h1 {
-    font-size: 500%;
-    font-weight: 700;
-    color: lightgrey;
-}
-
-.landing-text h3 {
-    color: lightgrey;
 }
 
 .padding {
@@ -105,14 +52,14 @@ img {
     padding: 30px 0;
 }
 
-/* Slider */
+/* =========== SLIDER ================ */
 
 .carousel-item {
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .carousel-caption {
+    color: var(--cadir-blue);
     position: absolute;
     top: 38%;
     text-transform: uppercase;
@@ -125,37 +72,29 @@ img {
     letter-spacing: .3rem;
 }
 
-footer {
-    color: white;
-    padding: 2rem 0 3rem;
-    margin-top: 1rem;
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-indicators {
+    filter: invert(100%);
+}   
+
+.high-brightness {
+    filter: opacity(80%);
 }
 
-footer a {
-    color: white;
+/* ======================== GUIAS ========================= */
+.guias h4 {
+    color: var(--cadir-blue);
 }
 
-footer svg.svg-inline--fa {
-    font-size: 1.6rem;
-    margin: 1.2rem .5 0 0;
+.guias .socket {
+    border-top: .15rem solid var(--cadir-blue);
 }
 
-hr.socket {
-    border-top: .2rem solid #666b71;
-    width: 100%;
-}
-
-.programa-tile {
-    font-family: 'Cinzel', serif;
-    text-align: center;
-}
-/* .shadow {
-    box-shadow: 0 1px 5px rgba(104,104,104,0.8);
-} */
 
 /* Horizontal Cards Programs*/
-.card-horizontal{
-    /* Adicionando uma largura máxima para não distorcer a imagem*/
+/* .card-horizontal{
+    Adicionando uma largura máxima para não distorcer a imagem
     box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -171,4 +110,27 @@ hr.socket {
     width: 20%;
     height: 150px;
     align-content: center;
+} */
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+    background-color: var(--cadir-blue) !important;
+    border-color: var(--cadir-blue) !important;
+}
+
+a:active {
+    outline: none;
+}
+
+/*==========SLIDER DOS EVENTOS===================*/
+
+#shrink .carousel .carousel-item {
+    height: 300px;
+}
+
+#shrink .carousel-item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
 }

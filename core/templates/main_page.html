@@ -3,15 +3,9 @@
 {% load static %}
 {% block content %}
 
-    <!-- Cartao de visitas do site -->
-    <!-- <div id="home">
-        <div class="landing-text">
-            <h1>Direito UnB</h1>
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>(Melhorar cores)</p>
-        </div>
-    </div> -->
-    <div class="carousel slide" data-interval="4000" data-ride="carousel" id="carouselExampleIndicators">
+<!-- ***********************MAIN SLIDER****************************** -->
+
+    <div class="carousel slide" data-interval="3000" data-ride="carousel" id="carouselExampleIndicators">
         <ol class="carousel-indicators">
             <li class="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
             <li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
@@ -19,22 +13,22 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active"
-                 style="background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)), url(../../media/law.jpg);">
-                <div class="carousel-caption text-center">
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.255), rgba(255,255,255,0.25)), url(../../media/law.jpg);">
+                <div class="carousel-caption text-center d-none d-md-block">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
             </div>
             <div class="carousel-item"
-                 style="background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)), url(../../media/estante1.jpg);">
-                <div class="carousel-caption text-center">
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/estante1.jpg);">
+                <div class="carousel-caption text-center d-none d-md-block">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
             </div>
             <div class="carousel-item"
-                 style="background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)), url(../../media/domino.jpg);">
-                <div class="carousel-caption text-center">
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/domino.jpg);">
+                <div class="carousel-caption text-center d-none d-md-block">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -49,8 +43,9 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </a>
     </div>
-
+    <!-- *********************** END MAIN SLIDER ************************ -->
     <!-- Texto que fica abaixo do cartão de visitas -->
+    
     <div class="padding">
         <div class="container">
             <div class="text-center">
@@ -72,10 +67,11 @@
 
     <!-- Area que seria uma preview dos guias -->
     <div class="padding">
-        <div class="container">
+        <div class="container guias">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <h4>Como usar Matrícula Web</h4>
+                    <h4>Como usar o Matrícula Web</h4>
+                    <hr class="socket">
                     <p align="justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et voluptatibus modi
                         fuga iste veritatis, molestias quo rerum, optio sint commodi ut, hic non minima omnis possimus
                         fugit cumque! Velit, corrupti.</p>
@@ -85,6 +81,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <h4>Manual do Calouro</h4>
+                    <hr class="socket">
                     <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum minima
                         voluptatibus impedit quod! Dolorem iure autem dolorum commodi quas dolore quidem, sequi, omnis
                         ad, debitis obcaecati voluptatum pariatur asperiores? Vel.</p>
@@ -93,6 +90,7 @@
                     <img src="../../media/manual.jpeg">
                 </div>
             </div>
+            <br>    
             <div class="text-center ver-mais">
                 <a class="btn btn-primary" href="#">Mais Guias Estudantis</a>
             </div>
@@ -157,74 +155,115 @@
     </div>
 
     <div class="container-fluid">
-        <div class="container">
-            <h2 class="pb-3 pt-2">Próximos Eventos</h2>
-            <!-- Primeiro Evento -->
-            <div class="row align-items-center auxiliar-path">
-                <div class="col-2 text-center bottom">
-                    <div class="data"> 20 de Agosto</div>
+            <!-- <div class="container">
+                <h2 class="pb-3 pt-2">Próximos Eventos</h2>
+                Primeiro Evento
+                <div class="row align-items-center auxiliar-path">
+                    <div class="col-2 text-center bottom">
+                        <div class="data"> 20 de Agosto</div>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="event-title"> Evento A </h5>
+                        <p>orem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
+                            a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
+                            ipsa,</p>
+                    </div>
                 </div>
-                <div class="col-6">
-                    <h5 class="event-title"> Evento A </h5>
-                    <p>orem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
-                        a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
-                        ipsa,</p>
+
+                Caminho entre o 1 e o 2 Evento
+                <div class="row path">
+                    <div class="col-2">
+                        <div class="corner top-right"></div>
+                    </div>
+                    <div class="col-8">
+                        <hr/>
+                    </div>
+                    <div class="col-2">
+                        <div class="corner left-bottom"></div>
+                    </div>
                 </div>
+
+                Segundo Evento
+                <div class="row align-items-center justify-content-end auxiliar-path">
+                    <div class="col-6 text-right">
+                        <h5 class="event-title">Evento B</h5>
+                        <p>orem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
+                            a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
+                            ipsa,</p>
+                    </div>
+                    <div class="col-2 text-center full">
+                        <div class="data">7 de Setembro</div>
+                    </div>
+                </div>
+
+                Caminho entre o evento 2 e o 3
+                <div class="row path">
+                    <div class="col-2">
+                        <div class="corner right-bottom"></div>
+                    </div>
+                    <div class="col-8">
+                        <hr/>
+                    </div>
+                    <div class="col-2">
+                        <div class="corner top-left"></div>
+                    </div>
+                </div>
+
+                Terceiro Evento
+                <div class="row align-items-center auxiliar-path">
+                    <div class="col-2 text-center top">
+                        <div class="data">21 de Fevereiro</div>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="event-title">Evento C</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
+                            a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
+                            ipsa,</p>
+                    </div>
+                </div>
+
+
+            </div> -->
+        
+        <div id="shrink">
+            <div id="carouselEventos" data-interval="3000"class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselEventos" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselEventos" data-slide-to="1"></li>
+                    <li data-target="#carouselEventos" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../../media/domino.jpg" class="img-fluid d-block high-brightness">
+                        <div class="carousel-caption">
+                            <h3>Evento 1</h3>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../media/law.jpg" class="img-fluid d-block high-brightness">
+                        <div class="carousel-caption">
+                            <h3>Evento 2</h3>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../media/oculos.jpg" class="img-fluid d-block high-brightness">
+                        <div class="carousel-caption">
+                            <h3>Evento 3</h3>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#carouselEventos" class="carousel-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">prev</span>
+                </a>
+                <a href="#carouselEventos" class="carousel-control-next" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">next</span>
+                </a>
             </div>
-
-            <!-- Caminho entre o 1 e o 2 Evento-->
-            <div class="row path">
-                <div class="col-2">
-                    <div class="corner top-right"></div>
-                </div>
-                <div class="col-8">
-                    <hr/>
-                </div>
-                <div class="col-2">
-                    <div class="corner left-bottom"></div>
-                </div>
-            </div>
-
-            <!--Segundo Evento -->
-            <div class="row align-items-center justify-content-end auxiliar-path">
-                <div class="col-6 text-right">
-                    <h5 class="event-title">Evento B</h5>
-                    <p>orem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
-                        a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
-                        ipsa,</p>
-                </div>
-                <div class="col-2 text-center full">
-                    <div class="data">7 de Setembro</div>
-                </div>
-            </div>
-
-            <!-- Caminho entre o evento 2 e o 3-->
-            <div class="row path">
-                <div class="col-2">
-                    <div class="corner right-bottom"></div>
-                </div>
-                <div class="col-8">
-                    <hr/>
-                </div>
-                <div class="col-2">
-                    <div class="corner top-left"></div>
-                </div>
-            </div>
-
-            <!-- Terceiro Evento-->
-            <div class="row align-items-center auxiliar-path">
-                <div class="col-2 text-center top">
-                    <div class="data">21 de Fevereiro</div>
-                </div>
-                <div class="col-6">
-                    <h5 class="event-title">Evento C</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
-                        a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
-                        ipsa,</p>
-                </div>
-            </div>
-
-
         </div>
         <div>
             <div class="text-center ver-mais">

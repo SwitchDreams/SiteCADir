@@ -1,3 +1,10 @@
+:root {
+    --cadir-blue-faded: #0016527c;
+    --cadir-blue: #001652;
+    --bg-white: #f3f3f3;
+    --bg-white-nav : #ececec;
+}
+
 #programas-fixed {
     display: table;
     height: 60%;
@@ -12,5 +19,5 @@ h1 {
 }
 
 .jumbotron {
-    background-color: white;
+    background-color:var(--bg-white);
 }

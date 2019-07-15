@@ -1,0 +1,121 @@
+/* FONTES */
+@import url('https://fonts.googleapis.com/css?family=Lato:700&display=swap');
+
+/* CORES */
+:root {
+    --cadir-blue-faded: #0016527c;
+    --cadir-blue: #001652;
+    --bg-white: #f3f3f3;
+    --bg-white-nav : #ececec;
+}
+
+/* Alteraçoes referentes a pagina inteira */
+html, body {
+    height: 100%;
+    width: 100%;
+    /*overflow-x: hidden;*/
+    margin: 0;
+    background-color: var(--bg-white);
+}
+
+.content {
+    min-height: 640px;
+}
+body {
+    overflow-x: hidden;
+}
+/* ====== NAV BAR ========================== */
+
+a:active {
+    outline: none;
+}
+
+.nav-link {
+    font-size: 16px !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--cadir-blue-faded);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--cadir-blue);
+}
+
+.navbar-light .navbar-nav .nav-item .active {
+    color: var(--cadir-blue);
+}
+
+.navbar-brand img {
+    height: 5rem;
+}
+
+.nav-item {
+    text-align: right;
+}
+
+nav {
+    overflow: auto;
+    background-color: var(--bg-white-nav);
+    font-family: 'Lato', sans-serif;
+}
+/* ============NAV ANIMATION==================== */
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .3s;
+}
+
+nav.stroke ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: var(--cadir-blue);
+  height: 2px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+/* ============== FOOTER =============== */
+
+
+footer {
+    color: white;
+    padding: 2rem 0 3rem;
+    margin-top: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+footer a {
+    color: white;
+}
+
+footer svg.svg-inline--fa {
+    font-size: 1.6rem;
+    margin: 1.2rem .5 0 0;
+}
+
+footer svg.svg-inline--fa:hover {
+    color: var(--cadir-blue);
+}
+
+hr.socket {
+    border-top: .2rem solid #666b71;
+    width: 100%;
+}
+
+.programa-tile {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+}
