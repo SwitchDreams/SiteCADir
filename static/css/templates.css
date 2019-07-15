@@ -13,8 +13,9 @@
 html, body {
     height: 100%;
     width: 100%;
-    /*overflow-x: hidden;*/
+    /* overflow-x: hidden; */
     margin: 0;
+    padding: 0;
     background-color: var(--bg-white);
 }
 
@@ -23,6 +24,7 @@ html, body {
 }
 body {
     overflow-x: hidden;
+    position: relative;
 }
 /* ====== NAV BAR ========================== */
 
@@ -60,6 +62,11 @@ nav {
     overflow: auto;
     background-color: var(--bg-white-nav);
     font-family: 'Lato', sans-serif;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+    background-color: var(--cadir-blue) !important;
+    border-color: var(--cadir-blue) !important;
 }
 /* ============NAV ANIMATION==================== */
 nav ul li a,

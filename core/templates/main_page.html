@@ -14,21 +14,21 @@
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active"
                  style="background-image:linear-gradient(rgba(255, 255, 255, 0.255), rgba(255,255,255,0.25)), url(../../media/law.jpg);">
-                <div class="carousel-caption text-center d-none d-md-block">
+                <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
             </div>
             <div class="carousel-item"
                  style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/estante1.jpg);">
-                <div class="carousel-caption text-center d-none d-md-block">
+                <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
             </div>
             <div class="carousel-item"
                  style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/domino.jpg);">
-                <div class="carousel-caption text-center d-none d-md-block">
+                <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -119,20 +119,24 @@
 
     <!-- Escolhe Aleatoriamente 4 Programas -->
     <div class="padding">
-        <div class="card-deck">
-            {% for programa in Programas %}
-            <div data-aos="flip-left" class="card" style="width: 18rem;">
-                <img alt="Card image cap" class="card-img-top" src={% get_media_prefix %}{{ programa.logo }}>
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{ programa.nome }}</h5>
-                    <p align="justify">{{ programa.text|truncatewords:25 }}</p>
+        <section id="responsive">
+            <div class="container-fluid">
+                <div class="card-deck">
+                    {% for programa in Programas %}
+                    <div data-aos="flip-left" class="card" style="width: 18rem;">
+                        <img alt="Card image cap" class="card-img-top" src={% get_media_prefix %}{{ programa.logo }}>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ programa.nome }}</h5>
+                            <p align="justify">{{ programa.text|truncatewords:25 }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="text-center ver-mais">
+                    <a class="btn btn-primary" href="{% url 'programas:index' %}">Ver Mais Programas</a>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-        <div class="text-center ver-mais">
-            <a class="btn btn-primary" href="{% url 'programas:index' %}">Ver Mais Programas</a>
-        </div>
+        </section>
     </div>
 
     <div id="fixed2"></div>

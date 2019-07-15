@@ -1,3 +1,4 @@
+
 /* FONTES */
 /* Cardo e Oswald */
 @import url('https://fonts.googleapis.com/css?family=Cardo|Oswald&display=swap');
@@ -8,6 +9,11 @@
     --bg-white: #f3f3f3;
     --bg-white-nav : #ececec;
 }
+
+/* * { 
+    outline: 1px red solid !important;
+    visibility: visible !important
+} */
 
 p {
     font-family: Arial, Helvetica, sans-serif;
@@ -112,15 +118,40 @@ h1, h2, h3, h4, h5, h6 {
     align-content: center;
 } */
 
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
-    background-color: var(--cadir-blue) !important;
-    border-color: var(--cadir-blue) !important;
-}
 
 a:active {
     outline: none;
 }
+/* ==================CARD DECK PROGRAMAS=============== */
+@media(max-width: 932px){
+	h5{
+		font-size: 20px;
+	}
+	p.card-text{
+		font-size: 14px;
+		letter-spacing: 0px;
+	}
+	#responsive .socialicon .fa{
+		font-size: 20px;
+	}
+}
+@media(max-width: 768px){
+      .card-deck .card{
+        flex: 0 0 45%;
+        margin: 20px auto;
+      }
+    }
+@media(max-width: 691px){
+	#responsive {
+		margin: 20px auto;
+	}
+}
+@media(max-width: 619px){
+	.card-deck .card{
+		width: 80%;
+	}
 
+}
 /*==========SLIDER DOS EVENTOS===================*/
 
 #shrink .carousel .carousel-item {
