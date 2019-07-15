@@ -51,12 +51,16 @@ a:active {
 }
 
 .navbar-brand img {
-    height: 5rem;
+    height: 6.5rem;
 }
 
 .nav-item {
     text-align: right;
 }
+
+/* .space {
+    padding: 0 10px;
+} */
 
 nav {
     /* overflow-y: auto; */

@@ -7,6 +7,7 @@
         <meta content="ie=edge" http-equiv="X-UA-Compatible">
         <meta content="Site CaDir" name="description"/>
         <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+        <link rel="icon" href="../media/CADir_logo.png">
 
         <script src="static/js/vivus.js"></script>
         <script crossorigin="anonymous" defer integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
@@ -31,7 +32,7 @@
         <div class="container-fluid">
             <nav class="navbar fixed-top navbar-expand-lg navbar-light stroke">
                 <a class="navbar-brand" href="{% url 'core:main' %}">
-                    <img class="img-fluid" src="../media/CADIR transp.png">
+                    <img class="img-fluid" src="../media/CADir_logo.png">
                 </a>
                 <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"></span>
@@ -39,34 +40,34 @@
 
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{% url 'core:main' %}">
+                        <li class="nav-item px-2">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'main' %}active{% endif %}" href="{% url 'core:main' %}">
                                 Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item px-2">
                             <a class="nav-link" href="#">
                                 Institucional
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item px-2">
                             <a class="nav-link" href="#">
                                 Eventos
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item px-2">
                             <a class="nav-link" href="#">
                                 Guias
                             </a>
                         </li>
-                        <li class="nav-item small">
-                            <a class="nav-link" href="{% url 'programas:index' %}">
+                        <li class="nav-item px-2">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'programas:index' %}">
                                 Programas
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'ouvidoria:ouvidoria' %}">
+                        <li class="nav-item px-2">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'ouvidoria' %}active{% endif %}" href="{% url 'ouvidoria:ouvidoria' %}">
                                 Ouvidoria
                             </a>
                         </li>
