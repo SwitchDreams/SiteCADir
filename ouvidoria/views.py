@@ -12,7 +12,7 @@ def escolhe_email(tema):
     elif tema == "Tema2":
         return ['joaopedroassisdossantos@gmail.com']
     else:
-        return ['pedro_a2312@hotmail.com']
+        return ['dreamsswitch@gmail.com']
 
 
 def ouvidoria(request):
@@ -30,8 +30,7 @@ def ouvidoria(request):
         texto = form.cleaned_data.get('texto')
         # Enviar email
         to_email = escolhe_email(tema)
-        to_email = ['pedro_a2312@hotmail.com']
-        send_mail(assunto, texto, "fromcadir@site.com", to_email)
+        send_mail(assunto, texto, "brad@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org", to_email)
         context["thanks"] = "E-mail enviado com sucesso"
     context["form"] = form
     return render(request, template_name, context)

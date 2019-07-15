@@ -4,6 +4,9 @@
         <div class="jumbotron">
             <!-- Padding -->
             <br>
+            <h1 class="text-success text-center">
+                {{ thanks }}
+            </h1>
             <p class="text-justify">
                 Aqui, os estudantes podem apresentar anonimamente suas sugestões e críticas relacionadas à gestão e ao
                 curso. Cada mensagem é redirecionada para a gestão correspondente dentro do CADir de acordo com o tema,
@@ -21,10 +24,6 @@
                     {% endfor %}
                 </div>
                 <input class="btn btn-outline-dark" type="submit" value="Enviar mensagem">
-
-                <p>
-                    {{ thanks }}
-                </p>
             </form>
         </div>
     </div>
