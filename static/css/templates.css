@@ -23,7 +23,7 @@ html, body {
     min-height: 640px;
 }
 body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     position: relative;
 }
 /* ====== NAV BAR ========================== */
@@ -59,7 +59,8 @@ a:active {
 }
 
 nav {
-    overflow: auto;
+    /* overflow-y: auto; */
+    /* overflow-x: hidden; */
     background-color: var(--bg-white-nav);
     font-family: 'Lato', sans-serif;
 }
@@ -102,6 +103,7 @@ footer {
     padding: 2rem 0 3rem;
     margin-top: 1rem;
     font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
 }
 
 footer a {

@@ -1,136 +1,140 @@
 <!doctype html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <meta content="Site CaDir" name="description"/>
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <meta content="Site CaDir" name="description"/>
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 
-    <script src="static/js/vivus.js"></script>
-    <script crossorigin="anonymous" defer
-            integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
-            src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <title>Site CaDir</title>
-    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+        <script src="static/js/vivus.js"></script>
+        <script crossorigin="anonymous" defer integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
+        <title>Site CaDir</title>
+        <link
+        href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <!-- Our css -->
-    <link rel="stylesheet" href="{% static "css/main_page.css" %}"/>
-    <link rel="stylesheet" href="{% static "css/mini_timeline.css" %}"/>
-    <link rel="stylesheet" href="{% static "css/programas.css" %}"/>
-    <link rel="stylesheet" href="{% static "css/templates.css" %}"/>
-    <!-- AOS Library-->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light stroke">
-    <a class="navbar-brand" href="{% url 'core:main' %}">
-        <img src="../media/CADIR transp.png" class="img-fluid">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="{% url 'core:main' %}">
-                    Home
-                    <span class="sr-only">(current)</span>
+        <!-- Bootstrap -->
+        <link
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Our css -->
+        <link rel="stylesheet" href="{% static "css/main_page.css" %}"/>
+        <link rel="stylesheet" href="{% static "css/mini_timeline.css" %}"/>
+        <link rel="stylesheet" href="{% static "css/programas.css" %}"/>
+        <link
+        rel="stylesheet" href="{% static "css/templates.css" %}"/>
+        <!-- AOS Library-->
+        <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light stroke">
+                <a class="navbar-brand" href="{% url 'core:main' %}">
+                    <img class="img-fluid" src="../media/CADIR transp.png">
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Institucional
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Eventos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Guias
-                </a>
-            </li>
-            <li class="nav-item small">
-                <a class="nav-link" href="{% url 'programas:index' %}">
-                    Programas
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'ouvidoria:ouvidoria' %}">
-                    Ouvidoria
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
+                <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-<!-- Usando Como Padding(Alterar Posteriormente) -->
-<!-- <br>
-<br> -->
-
-{% block content %}{% endblock %}
-
-
-<footer class="bg-dark">
-    <div class="row justify-content-center">
-        <div class="col-md-5 text-center">
-            <h4>CADir UnB</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odio non nam, quibusdam ducimus dolorum
-                necessitatibus similique voluptatem id nulla.</p>
-            <strong>Contatos</strong>
-            <p>cadirunb@unb.com.br</p>
-            <a href=""><i class="fab fa-facebook-square"></i></a>
-            <a href=""><i class="fab fa-twitter-square"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'core:main' %}">
+                                Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Institucional
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Eventos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Guias
+                            </a>
+                        </li>
+                        <li class="nav-item small">
+                            <a class="nav-link" href="{% url 'programas:index' %}">
+                                Programas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ouvidoria:ouvidoria' %}">
+                                Ouvidoria
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <hr class="socket">
-        <h5>Powered by Switch Dreams &copy;</h5>
-    </div>
-</footer>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        // Global settings:
-        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-        initClassName: 'aos-init', // class applied after initialization
-        animatedClassName: 'aos-animate', // class applied on animation
-        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        <!-- Usando Como Padding(Alterar Posteriormente) -->
+        <!-- <br>
+        <br> -->
+
+        {% block content %}{% endblock %}
 
 
-        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 120, // offset (in px) from the original trigger point
-        delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 400, // values from 0 to 3000, with step 50ms
-        easing: 'ease', // default easing for AOS animations
-        once: false, // whether animation should happen only once - while scrolling down
-        mirror: false, // whether elements should animate out while scrolling past them
-        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+        <footer class="bg-dark">
+            <div class="row justify-content-center">
+                <div class="col-md-5 text-center">
+                    <h4>CADir UnB</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odio non nam, quibusdam ducimus dolorum
+                                        necessitatibus similique voluptatem id nulla.</p>
+                    <strong>Contatos</strong>
+                    <p>cadirunb@unb.com.br</p>
+                    <a href="">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <hr class="socket">
+                <h5>Powered by Switch Dreams &copy;</h5>
+            </div>
+        </footer>
 
-    });
-</script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({ // Global settings:
+                disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+                startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+                initClassName: 'aos-init', // class applied after initialization
+                animatedClassName: 'aos-animate', // class applied on animation
+                useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+                disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+                debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+                throttleDelay: 99,
+                // the delay on throttle used while scrolling the page (advanced)
 
-<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="{% static 'js/main.js' %}">
-</script>
-</body>
+
+                // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+                offset: 120, // offset (in px) from the original trigger point
+                delay: 0, // values from 0 to 3000, with step 50ms
+                duration: 400, // values from 0 to 3000, with step 50ms
+                easing: 'ease', // default easing for AOS animations
+                once: false, // whether animation should happen only once - while scrolling down
+                mirror: false, // whether elements should animate out while scrolling past them
+                anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+            });
+        </script>
+
+        <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
 </html>

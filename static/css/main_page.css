@@ -10,6 +10,7 @@
     --bg-white-nav : #ececec;
 }
 
+/* Caixas vermelhas ao redor de tudo - usar para debug */
 /* * { 
     outline: 1px red solid !important;
     visibility: visible !important
