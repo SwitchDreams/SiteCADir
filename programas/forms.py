@@ -8,7 +8,7 @@ class SelectPrograma(forms.Form):
         ('TOD', 'Todos'),
         ('ATL', 'Atlética'),
         ('EJ', 'Empresa Junior'),
-        ('GE', 'Grupo de extensão'),
+        ('GE', 'Grupos de extensão'),
         ('OUT', 'Outros'),
 
     )

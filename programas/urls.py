@@ -5,7 +5,7 @@ app_name = 'programas'
 
 urlpatterns = [
     # Index Path
-    path('', views.index, name='index'),
+    path('', views.index, name='programas_index'),
     # Show Path
     path('<int:pk>', views.show, name='show')
 ]

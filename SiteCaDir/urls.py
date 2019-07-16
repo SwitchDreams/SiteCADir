@@ -24,6 +24,9 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),
     path('programas/', include('programas.urls', namespace='programas')),
     path('ouvidoria/', include('ouvidoria.urls', namespace='ouvidoria')),
+    path('eventos/', include('eventos.urls', namespace='eventos')),
+    path('guias/', include('guias.urls', namespace='guias')),
+    path('institucional/', include('institucional.urls', namespace='institucional')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

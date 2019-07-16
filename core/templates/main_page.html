@@ -60,7 +60,7 @@
                 porro deleniti repudiandae earum doloremque voluptatum animi mollitia odit nisi sequi minus soluta
                 perspiciatis architecto? Dolorem totam quidem vero? Iure?</p>
             <div class="text-center">
-                <a class="btn btn-primary" href="#">Ler Mais</a>
+                <a class="btn btn-primary" href="{% url 'institucional:institucional_index' %}">Ler Mais</a>
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@
             </div>
             <br>    
             <div class="text-center ver-mais">
-                <a class="btn btn-primary" href="#">Mais Guias Estudantis</a>
+                <a class="btn btn-primary" href="{% url 'guias:guias_index' %}">Mais Guias Estudantis</a>
             </div>
         </div>
     </div>
@@ -133,7 +133,7 @@
                     {% endfor %}
                 </div>
                 <div class="text-center ver-mais">
-                    <a class="btn btn-primary" href="{% url 'programas:index' %}">Ver Mais Programas</a>
+                    <a class="btn btn-primary" href="{% url 'programas:programas_index' %}">Ver Mais Programas</a>
                 </div>
             </div>
         </section>
@@ -271,7 +271,7 @@
         </div>
         <div>
             <div class="text-center ver-mais">
-                <a class="btn btn-primary" href="#">Ver Mais Eventos</a>
+                <a class="btn btn-primary" href="{% url 'eventos:eventos_index' %}">Ver Mais Eventos</a>
             </div>
         </div>
 
