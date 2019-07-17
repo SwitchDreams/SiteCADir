@@ -13,7 +13,7 @@ class FormsOuvidoria(forms.Form):
 
     )
     # Campo acerca do tema
-    tema = forms.ChoiceField(label='Tema', widget=forms.Select(attrs={'class': 'form-control'}), choices=CHOICES)
+    categoria = forms.ChoiceField(label='Tema', widget=forms.Select(attrs={'class': 'form-control'}), choices=CHOICES)
     # Campo acerca do e-mail
     email = forms.EmailField(label='E-mail', widget=forms.TextInput(attrs={'class': 'form-control'}),
                              help_text="Caso deseje resposta, preencha esse campo",

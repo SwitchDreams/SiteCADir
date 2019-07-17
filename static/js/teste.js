@@ -41,8 +41,8 @@ var myChart = new Chart(ctx, {
     },
     options: {
         responsive: true,
-        //maintainAspectRatio: false,
-        aspectRatio : 2,
+        maintainAspectRatio: false,
+        //aspectRatio : 2,
         scales: {
             yAxes: [{
                 ticks: {
