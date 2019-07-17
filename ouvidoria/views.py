@@ -33,4 +33,6 @@ def ouvidoria(request):
         send_mail(assunto, texto, "brad@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org", to_email)
         context["thanks"] = "E-mail enviado com sucesso"
     context["form"] = form
+    context["dataGraph"] = [["Jorge", "1"],["Malaquias", "2"],["Tobias", "3"],["Alfredo", "4"],["Jose", "5"]]
+    # Definir model e funcao de acesso q retorne dados para plotar o grafico
     return render(request, template_name, context)
