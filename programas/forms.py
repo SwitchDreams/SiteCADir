@@ -7,7 +7,7 @@ class SelectPrograma(forms.Form):
     CHOICES = (
         ('TOD', 'Todos'),
         ('ATL', 'Atlética'),
-        ('EJ', 'Empresa Junior'),
+        ('EJ', 'Empresa Júnior'),
         ('GE', 'Grupos de extensão'),
         ('OUT', 'Outros'),
 

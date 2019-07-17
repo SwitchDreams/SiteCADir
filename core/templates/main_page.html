@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
 
-<!-- ***********************MAIN SLIDER****************************** -->
+    <!-- ***********************MAIN SLIDER****************************** -->
 
     <div class="carousel slide" data-interval="3000" data-ride="carousel" id="carouselExampleIndicators">
         <ol class="carousel-indicators">
@@ -45,7 +45,7 @@
     </div>
     <!-- *********************** END MAIN SLIDER ************************ -->
     <!-- Texto que fica abaixo do cartão de visitas -->
-    
+
     <div class="padding">
         <div class="container">
             <div class="text-center">
@@ -90,7 +90,7 @@
                     <img src="../../media/manual.jpeg">
                 </div>
             </div>
-            <br>    
+            <br>
             <div class="text-center ver-mais">
                 <a class="btn btn-primary" href="{% url 'guias:guias_index' %}">Mais Guias Estudantis</a>
             </div>
@@ -118,18 +118,19 @@
     </div>
 
     <!-- Escolhe Aleatoriamente 4 Programas -->
-    <div class="padding">
+    <div class="">
         <section id="responsive">
             <div class="container-fluid">
                 <div class="card-deck">
                     {% for programa in Programas %}
-                    <div data-aos="fade-up" class="card" style="width: 18rem;">
-                        <img alt="Card image cap" class="card-img-top" src={% get_media_prefix %}{{ programa.logo }}>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{ programa.nome }}</h5>
-                            <p align="justify">{{ programa.text|truncatewords:25 }}</p>
+                        <div data-aos="fade-up" class="card" style="width: 18rem;">
+                            <img alt="Card image cap" class="card-img-top"
+                                 src="{% get_media_prefix %}{{ programa.logo }}" height="225" width="225">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{ programa.nome }}</h5>
+                                <p align="justify">{{ programa.text|truncatewords:25 }}</p>
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
                 </div>
                 <div class="text-center ver-mais">
@@ -158,79 +159,10 @@
 
     </div>
 
+    <!-- Slider Eventos-->
     <div class="container-fluid">
-            <!-- <div class="container">
-                <h2 class="pb-3 pt-2">Próximos Eventos</h2>
-                Primeiro Evento
-                <div class="row align-items-center auxiliar-path">
-                    <div class="col-2 text-center bottom">
-                        <div class="data"> 20 de Agosto</div>
-                    </div>
-                    <div class="col-6">
-                        <h5 class="event-title"> Evento A </h5>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
-                            a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
-                            ipsa,</p>
-                    </div>
-                </div>
-
-                Caminho entre o 1 e o 2 Evento
-                <div class="row path">
-                    <div class="col-2">
-                        <div class="corner top-right"></div>
-                    </div>
-                    <div class="col-8">
-                        <hr/>
-                    </div>
-                    <div class="col-2">
-                        <div class="corner left-bottom"></div>
-                    </div>
-                </div>
-
-                Segundo Evento
-                <div class="row align-items-center justify-content-end auxiliar-path">
-                    <div class="col-6 text-right">
-                        <h5 class="event-title">Evento B</h5>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
-                            a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
-                            ipsa,</p>
-                    </div>
-                    <div class="col-2 text-center full">
-                        <div class="data">7 de Setembro</div>
-                    </div>
-                </div>
-
-                Caminho entre o evento 2 e o 3
-                <div class="row path">
-                    <div class="col-2">
-                        <div class="corner right-bottom"></div>
-                    </div>
-                    <div class="col-8">
-                        <hr/>
-                    </div>
-                    <div class="col-2">
-                        <div class="corner top-left"></div>
-                    </div>
-                </div>
-
-                Terceiro Evento
-                <div class="row align-items-center auxiliar-path">
-                    <div class="col-2 text-center top">
-                        <div class="data">21 de Fevereiro</div>
-                    </div>
-                    <div class="col-6">
-                        <h5 class="event-title">Evento C</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quia deleniti neque ullam
-                            a amet impedit obcaecati veritatis culpa veniam consequatur velit repellendus perferendis
-                            ipsa,</p>
-                    </div>
-                </div>
-
-
-            </div> -->
-        
         <div id="shrink">
-            <div id="carouselEventos" data-interval="3000"class="carousel slide" data-ride="carousel">
+            <div id="carouselEventos" data-interval="3000" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselEventos" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselEventos" data-slide-to="1"></li>

@@ -6,7 +6,7 @@ class Programa(models.Model):
     # Quando alterar tipo choices, atualizar o forms.py
     TIPOS_CHOICES = (
         ('ATL', 'Atlética'),
-        ('EJ', 'Empresa Junior'),
+        ('EJ', 'Empresa Júnior'),
         ('GE', 'Grupos de extensão'),
         ('OUT', 'Outros'),
 
