@@ -19,7 +19,7 @@ def categoria_clean(categoria):
 
 
 def corpo_do_email(assunto, texto, email):
-    corpo_do_texto = "Email Enviado da Ouvidoaria do Site do CADir - Assunto: " + assunto + "\n"
+    corpo_do_texto = "Email Enviado da Ouvidoria do Site do CADir - Assunto: " + assunto + "\n"
     if email != "":
         corpo_do_texto += "O destinatário deseja resposta, envie para o e-mail: " + email + "\n"
     corpo_do_texto += texto

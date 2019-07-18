@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .models import Categoria
+from .models import Categoria, MensagemOuvidoria
 
 
 # Register your models here.
@@ -12,6 +12,12 @@ class OuvidoriaAdmin(admin.ModelAdmin):
     def changelist_view(self, request, extra_context=None):
         response = super().changelist_view(request, extra_context=extra_context, )
 
-        response.context_data["dataGraph"] = [["Jorge", "1"], ["Malaquias", "2"], ["Tobias", "3"], ["Alfredo", "4"],
-                                              ["Jose", "5"]]
+        # response.context_data["dataGraph"] = [["Jorge", "1"], ["Malaquias", "2"], ["Tobias", "3"], ["Alfredo", "4"], ["Jose", "5"]]
+
+        # Ariel exemplo pegando no periodo inteiro do site
+        categorias = Categoria.objects.all()
+        listaDataGraph = []
+        for categoria in categorias:
+            listaDataGraph.append([categoria.nome, MensagemOuvidoria.objects.filter(categoria=categoria).count()])
+        response.context_data["dataGraph"] =listaDataGraph
         return response
