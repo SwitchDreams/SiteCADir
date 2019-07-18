@@ -1,4 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1> Ouvidoria </h1>
+    <div class="container">
+        <div class="jumbotron">
+            <!-- Padding -->
+            <br>
+            <h1 class="text-success text-center">
+                {{ thanks }}
+            </h1>
+            <p class="text-justify">
+                Aqui, os estudantes podem apresentar anonimamente suas sugestões e críticas relacionadas à gestão e ao
+                curso. Cada mensagem é redirecionada para a gestão correspondente dentro do CADir de acordo com o tema,
+                caso
+                queira resposta adicione seu e-mail no campo correspondente.
+            </p>
+            <h1 class="text-center"> Ouvidoria Online </h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {% for field in form %}
+                        {{ field.label }} <br><br>
+                        {{ field }}
+                        {{ field.help_text }} <br><br>
+                    {% endfor %}
+                </div>
+                <input class="btn btn-outline-dark" type="submit" value="Enviar mensagem">
+            </form>
+        </div>
+    </div>
+
 {% endblock %}
