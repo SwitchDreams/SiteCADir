@@ -8,21 +8,21 @@ import datetime
 # Auxiliar functions
 def categoria_clean(categoria):
     # Coletando o ano atual
-    ano = datetime.datetime.year
+    ano = datetime.datetime.now()
+    ano = ano.year
     # Tratando o assunto e o text enviado
-    start = datetime.date(int(ano), 1, 1)
-    end = datetime.date(int(ano), 12, 31)
-    assunto_enviado = categoria + MensagemOuvidoria.objects.filter(data__range=[start, end]).count + ano
-    print(assunto_enviado)
+    start = datetime.date(ano, 1, 1)
+    end = datetime.date(ano, 12, 31)
+    assunto_enviado = str(categoria.nome) + "-" + str(
+        MensagemOuvidoria.objects.filter(data__range=[start, end]).filter(categoria=categoria).count()) + "/" + str(ano)
     return assunto_enviado
 
 
 def corpo_do_email(assunto, texto, email):
-    corpo_do_texto = "Email Enviado da Ouvidoaria do Site do CADir - Assunto: " + assunto + "/n"
-    if email != None:
-        corpo_do_texto += "O destinatário deseja resposta, envie para o e-mail: " + email + "/n"
-    else:
-        corpo_do_texto += texto
+    corpo_do_texto = "Email Enviado da Ouvidoaria do Site do CADir - Assunto: " + assunto + "\n"
+    if email != "":
+        corpo_do_texto += "O destinatário deseja resposta, envie para o e-mail: " + email + "\n"
+    corpo_do_texto += texto
     return corpo_do_texto
 
 
@@ -51,8 +51,8 @@ def ouvidoria(request):
         mensagem = MensagemOuvidoria(categoria=categoria)
         mensagem.save()
 
-        # Email do cadir
-        to_email = "cadirunb@unb.com.br"
+        # Email do cadir(Tem que ser uma tupla)
+        to_email = ["pedro_a2312@hotmail.com"]
 
         # Enviando o e-mail
         send_mail(assunto_enviado, corpo_do_texto, "brad@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org", to_email)

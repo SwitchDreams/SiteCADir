@@ -1,19 +1,11 @@
 from django import forms
+from .models import Categoria
 
 
 class FormsOuvidoria(forms.Form):
-    # Temas da Ouvidoria
-    CHOICES = (
-        ('', ''),
-        ('Tema1', 'Tema1'),
-        ('Tema2', 'Tema2'),
-        ('Tema3', 'Tema3'),
-        ('Tema4', 'Tema4'),
-        ('Tema5', 'Tema5'),
-
-    )
     # Campo acerca do tema
-    categoria = forms.ChoiceField(label='Tema', widget=forms.Select(attrs={'class': 'form-control'}), choices=CHOICES)
+    categoria = forms.ModelChoiceField(label='Tema', widget=forms.Select(attrs={'class': 'form-control'}),
+                                       queryset=Categoria.objects.all())
     # Campo acerca do e-mail
     email = forms.EmailField(label='E-mail', widget=forms.TextInput(attrs={'class': 'form-control'}),
                              help_text="Caso deseje resposta, preencha esse campo",
