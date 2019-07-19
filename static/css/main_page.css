@@ -2,6 +2,7 @@
 /* FONTES */
 /* Cardo e Oswald */
 @import url('https://fonts.googleapis.com/css?family=Cardo|Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed&display=swap');
 
 :root {
     --cadir-blue-faded: #3c5a8c;
@@ -17,11 +18,12 @@
 } */
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .card {
@@ -63,6 +65,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-item {
     height: 100vh;
+}
+
+#first-slider {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.255), rgba(255,255,255,0.25)), url("../../media/law.jpg");
+}
+
+#second-slider {
+    
+}
+
+#third-slider {
+    
 }
 
 .carousel-caption {

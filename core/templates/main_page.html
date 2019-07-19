@@ -12,22 +12,25 @@
             <li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active"
-                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.255), rgba(255,255,255,0.25)), url(../../media/law.jpg);">
+            <div id="fisrt-slider" class="carousel-item active"
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.255), rgba(255,255,255,0.25)), url(../../media/law.jpg);
+                        background-size: cover">
                 <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
             </div>
-            <div class="carousel-item"
-                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/estante1.jpg);">
+            <div id="second-slider" class="carousel-item"
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/estante1.jpg);
+                        background-size: cover">
                 <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
             </div>
-            <div class="carousel-item"
-                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/domino.jpg);">
+            <div id="third-slider" class="carousel-item"
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(../../media/domino.jpg);
+                        background-size: cover">
                 <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Lorem ipsum dolor sit amet</h3>
@@ -124,8 +127,10 @@
                 <div class="card-deck">
                     {% for programa in Programas %}
                         <div data-aos="fade-up" class="card" style="width: 18rem;">
-                            <img alt="Card image cap" class="card-img-top"
-                                 src="{% get_media_prefix %}{{ programa.logo }}" height="225" width="225">
+                            <a href="{% url 'programas:show' pk=programa.id %}">
+                                <img alt="Card image cap" class="card-img-top"
+                                    src="{% get_media_prefix %}{{ programa.logo }}" height="225" width="225">
+                            </a>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ programa.nome }}</h5>
                                 <p align="justify">{{ programa.text|truncatewords:25 }}</p>

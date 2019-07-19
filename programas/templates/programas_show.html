@@ -13,38 +13,38 @@
                 <img src="{% get_media_prefix %}{{ Programa.logo }}" alt="Logo">
             </div>-->
             <p class="text-justify">{{ Programa.text }}</p>
-            <br>
-            <div class="text-center">
-                <i class="far fa-envelope fa-5x"></i><br>
-                {{ Programa.email }}
-            </div>
+                <!-- <br>
+                <div class="text-center">
+                    <i class="far fa-envelope fa-5x"></i><br>
+                    {{ Programa.email }}
+                </div> -->
         </div>
     </div>
 
     <div class="container text-center">
         <div class="jumbotron jumbotron-fluid">
-            <div class="row">
-                {% if Programa.facebook %}
+            <h2 clas>Gostou? Fale conosco!</h2>
+            <p>Email: <a href="{{ Programa.email }}">{{ Programa.email }}</a></p></p>
+            {% if Programa.site %}
+                <p>Site: <a href="{{ Programa.site }}">{{ Programa.site }}</a></p>
+            {% endif %}
+            <br>
+            <div class="container no-gutters">
+                <div class="row">
                     <div class="col">
-                        <a href="{{ Programa.facebook }}"><i class="fab fa-facebook-square fa-5x"></i></a>
+                        {% if Programa.facebook %}
+                            <a id="facebook" href="{{ Programa.facebook }}"><i class="fab fa-facebook-square fa-3x"></i></a>
+                        {% endif %}
+                        {% if Programa.instagram %}
+                            <a id="instagram" href="{{ Programa.instagram }}"><i class="fab fa-instagram fa-3x"></i></a>
+                        {% endif %}
+                        
+                        {% if Programa.twitter %}
+                            <a id="twitter" href="{{ Programa.twitter }}"><i class="fab fa-twitter-square fa-3x"></i></a>
+                        {% endif %}
                     </div>
-                {% endif %}
-                {% if Programa.instagram %}
-                    <div class="col">
-                        <a href="{{ Programa.instagram }}"><i class="fab fa-instagram fa-5x"></i></a>
-                    </div>
-                {% endif %}
-                {% if Programa.site %}
-                    <div class="col">
-                        <a href="{{ Programa.site }}"><i class="fas fa-globe fa-5x"></i></a>
-                    </div>
-                {% endif %}
-                {% if Programa.twitter %}
-                    <div class="col">
-                        <a href="{{ Programa.twitter }}"><i class="fab fa-twitter-square fa-5x"></i></a>
-                    </div>
-                {% endif %}
-            </div>
+                </div>
+            </div>    
         </div>
     </div>
 {% endblock %}

@@ -7,18 +7,18 @@
     <br>
     <br>
     <br>
-    <h1 class="programa-tile"> Programas do Direito</h1>
+    <h1 class="text-center"> Programas do Direito</h1>
     <br>
 
     <form action="" method="post">
         {% csrf_token %}
-        <div class="programa-tile"> {{ form }} <input class="btn btn-outline-dark" type="submit" value="Filtrar"></div>
+        <div class="text-center"> {{ form }} <input class="btn btn-outline-dark" type="submit" value="Filtrar"></div>
     </form>
 
     <br>
     <!-- Cartões Verticais (Escolher)-->
-    <!--
-    <div class="padding">
+
+    <!-- <div class="padding">
         <div class="card-deck">
             {% for programa in Programas %}
                 <div data-aos="flip-left" class="card" style="width: 18rem;">
@@ -33,7 +33,7 @@
                 </div>
             {% endfor %}
         </div>
-    </div>-->
+    </div> -->
 
     <!-- Cartão Horizontal(Escolher )-->
     <div class="card" style="width: 100%;">

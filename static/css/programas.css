@@ -21,3 +21,24 @@ h1 {
 .jumbotron {
     background-color:var(--bg-white);
 }
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.less-widht {
+    padding: 0 500px;
+}
+
+#facebook {
+    color: #3b5998;
+}
+
+#instagram {
+    color: #c32aa3;
+}
+
+#twitter {
+    color: #1da1f2;
+}
