@@ -138,6 +138,10 @@ a:active {
     outline: none;
 }
 /* ==================CARD DECK PROGRAMAS=============== */
+.card-deck p{
+    text-align: justify;
+}
+
 @media(max-width: 932px){
 	h5{
 		font-size: 20px;

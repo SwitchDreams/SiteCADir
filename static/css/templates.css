@@ -110,6 +110,9 @@ footer {
     overflow-x: hidden;
 }
 
+footer p {
+    color: white;
+}
 footer a {
     color: white;
 }

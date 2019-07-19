@@ -47,7 +47,11 @@
                                      height="128"> </a>
                             <h5>{{ programa.nome }}</h5>
                         </div>
-                        <div class="card-horizontal-desc"> {{ programa.text|truncatewords:60 }} </div>
+                        <div class="card-horizontal-desc">
+                            <p>
+                                {{ programa.text|truncatewords:60|safe|striptags }}
+                            </p>
+                        </div>
                     </div>
                 </li>
                 <div style="padding: 10px 0;"></div>
