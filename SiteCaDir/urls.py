@@ -21,6 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     path('', include('core.urls', namespace='core')),
     path('programas/', include('programas.urls', namespace='programas')),
     path('ouvidoria/', include('ouvidoria.urls', namespace='ouvidoria')),
