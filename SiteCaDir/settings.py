@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'django_summernote',
+    'django_bleach',
     # -------- Ours apps --------------
     'core',
     'programas',
@@ -143,4 +145,25 @@ EMAIL_HOST_USER = 'postmaster@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.or
 EMAIL_HOST_PASSWORD = '2f8e122b1b0af3afda69b774f281bc8d-afab6073-8319ae88'
 EMAIL_USE_TLS = True
 
+# Summernote Config
 SUMMERNOTE_THEME = 'bs4'
+
+# Blanch Config
+# Which HTML tags are allowed
+BLEACH_ALLOWED_TAGS = ['']
+
+# Which HTML attributes are allowed
+BLEACH_ALLOWED_ATTRIBUTES = ['']
+
+# Which CSS properties are allowed in 'style' attributes (assuming
+# style is an allowed attribute)
+BLEACH_ALLOWED_STYLES = ['']
+
+# Strip unknown tags if True, replace with HTML escaped characters if
+# False
+BLEACH_STRIP_TAGS = True
+
+# Strip comments, or leave them in.
+BLEACH_STRIP_COMMENTS = False
+
+BLEACH_DEFAULT_WIDGET = 'django-summernote'

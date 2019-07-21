@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .models import Programa
 from .forms import SelectPrograma
 
-
 # Create your views here.
 
 def index(request):

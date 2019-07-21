@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load bleach_tags %}
 {% block content %}
 
     <!-- ***********************MAIN SLIDER****************************** -->
@@ -133,7 +134,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ programa.nome }}</h5>
-                                <p>{{ programa.text|truncatewords:25|safe|striptags }}</p>
+                                {{ programa.text|bleach|truncatewords:25 }}
                             </div>
                         </div>
                     {% endfor %}
