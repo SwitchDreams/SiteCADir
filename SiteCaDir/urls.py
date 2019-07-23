@@ -18,6 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views import defaults
+
+
+def custom_page_not_found(request):
+    return defaults.page_not_found(request, None)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +34,9 @@ urlpatterns = [
     path('eventos/', include('eventos.urls', namespace='eventos')),
     path('guias/', include('guias.urls', namespace='guias')),
     path('institucional/', include('institucional.urls', namespace='institucional')),
+
+    # Debbuging url
+    path('404/', custom_page_not_found),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

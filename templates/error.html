@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    <div class="text-center">
+        <div class="errorcode">
+            {% block errocode %}
+            {% endblock %}
+        </div>
+
+
+        <img src="{% get_media_prefix %}balance.svg" alt="Imagem da Balança" height="200px">
+
+
+        <p class="lead"> OPS! Aconteceu algo de errado </p>
+        <p> Navegue pelas outras páginas do site </p>
+
+
+    </div>
+{% endblock %}
