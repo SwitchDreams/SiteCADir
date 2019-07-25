@@ -10,36 +10,47 @@
     <h1> Futura Página dos Eventos</h1>
 
     <script>
-    $(function() {
+        $(function () {
 
-    $('#calendar').fullCalendar({
-      defaultView: 'month',
-      defaultDate: '2018-12-12',
-  
-      eventRender: function(eventObj, $el) {
-        $el.popover({
-          title: eventObj.title,
-          content: eventObj.description,
-          trigger: 'hover',
-          placement: 'top',
-          container: 'body'
+            $('#calendar').fullCalendar({
+                defaultView: 'month',
+                defaultDate: '2018-12-12',
+
+                eventRender: function (eventObj, $el) {
+                    $el.popover({
+                        title: eventObj.title,
+                        html: true,
+                        content: '<div>' + eventObj.description + '</div>' +
+                            '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
+                            '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                        ,
+                        trigger:
+                            'hover',
+                        placement:
+                            'top',
+                        container:
+                            'body'
+                    })
+                    ;
+                },
+
+                events: [
+                    {% for evento in Eventos %}
+                        {
+                            id: '{{ evento.id }}',
+                            allDay: {{ evento.isAllDay|lower }},
+                            description: '{{ evento.desc }}',
+                            title: '{{ evento.title }}',
+                            start: '{{ evento.day|date:'Y-m-d' }}T{{ evento.start|time:"H:i" }}',
+                            end: '{{ evento.day|date:'Y-m-d' }}T{{ evento.end|time:"H:i" }}',
+                            start_time: '{{ evento.start|time:"H:i" }}',
+                            end_time: '{{ evento.end|time:"H:i" }}',
+                            local: '{{ evento.local }}'
+                        },
+                    {% endfor %}
+                ]
+            });
         });
-      },
-  
-      events: [
-        {% for evento in Eventos %}
-            {
-                id: '{{ evento.id }}',
-                allDay: {{ evento.isAllDay|lower }},
-                description: '{{ evento.desc }}',
-                title: '{{ evento.title }}',
-                start: '{{ evento.day|date:'Y-m-d' }}T{{ evento.start|time:"H:i" }}',
-                end: '{{ evento.day|date:'Y-m-d' }}T{{ evento.end|time:"H:i" }}',
-            },
-        {% endfor %}
-      ]
-    }); 
-});
     </script>
     <div id='loading'>loading...</div>
     <div id='calendar'></div>

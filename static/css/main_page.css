@@ -72,11 +72,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #second-slider {
-    
+
 }
 
 #third-slider {
-    
+
 }
 
 .carousel-caption {
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-control-prev,
 .carousel-indicators {
     filter: invert(100%);
-}   
+}
 
 .high-brightness {
     filter: opacity(80%);

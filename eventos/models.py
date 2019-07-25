@@ -7,6 +7,8 @@ class Evento(models.Model):
     # Inforamções Principais
     title = models.CharField('Títutlo', max_length=60)
     desc = models.TextField('Descrição')
+    local = models.CharField('Local', max_length=60, default='FD, UnB')
+
     #  Datas
     day = models.DateField('Dia')
     isAllDay = models.BooleanField('É o dia inteiro?')
