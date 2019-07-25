@@ -10,3 +10,10 @@ def index(request):
         "Eventos": Evento.objects.all(),
     }
     return render(request, template_name, context)
+
+def show(request, **kwargs):
+    template_name = 'eventos_show.html'
+    context = {
+        "Evento": Evento.objects.filter(id=int(kwargs['pk'])).get()
+    }
+    return render(request, template_name, context)

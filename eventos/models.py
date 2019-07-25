@@ -15,8 +15,8 @@ class Evento(models.Model):
     start = models.TimeField('Horário de começo')
     end = models.TimeField('Horário de término')
 
-    #  Link para mais informações
-    link = models.URLField('link', blank=True)
+    # Imagem para a página de informações
+    show_img = models.ImageField('show_img', default='CADir_logo.png')
 
     def __str__(self):
         return self.title
