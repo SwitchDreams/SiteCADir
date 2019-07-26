@@ -11,43 +11,30 @@
     <link rel="icon" href="../media/CADir_logo.png">
     <title>CADir UnB</title>
 
+    <!-- Full Callendar -->
     <link rel='stylesheet' href='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.css'>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css" />
 
-
-    <!-- Vivus.js - lib de animações -->
-    <script src="static/js/vivus.js"></script>
     <!-- Font Awesome -->
     <script crossorigin="anonymous" defer
             integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
             src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <!-- Full calendar-->
-        <!-- CSS -->
-        {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.css"> {% endcomment %}
-    
-        <!-- JS -->
-        {% comment %} <script src="../static/js/calendar/core_main.js"></script>
-        <script src="../static/js/calendar/interactions_main.js"></script>
-        <script src="../static/js/calendar/daygrid_main.js"></script>
-        <script src="../static/js/calendar/list_main.js"></script>
-        <script src="../static/js/calendar/google_main.js"></script> {% endcomment %}
 
 
     <!-- Bootstrap -->
-    <link
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+
     <!-- Our css -->
     <link rel="stylesheet" href="{% static "css/main_page.css" %}"/>
     <link rel="stylesheet" href="{% static "css/mini_timeline.css" %}"/>
     <link rel="stylesheet" href="{% static "css/programas.css" %}"/>
     <link rel="stylesheet" href="{% static "css/eventos.css" %}"/>
-    <link
-            rel="stylesheet" href="{% static "css/templates.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/templates.css" %}"/>
+
     <!-- AOS Library-->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -103,17 +90,12 @@
         </div>
     </nav>
 </div>
-<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js'></script>
-<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/jquery.min.js'></script>
-<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/interaction/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/locale/pt-br.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
-<script src="{% static 'js/main.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+
 
 {% block content %}{% endblock %}
 
@@ -147,6 +129,7 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+
     AOS.init({ // Global settings:
         disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
         startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
@@ -170,6 +153,7 @@
 
     });
 </script>
+<script src="{% static 'js/main.js' %}"></script>
 
 {% comment %} <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
