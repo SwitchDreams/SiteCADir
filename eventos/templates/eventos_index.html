@@ -14,26 +14,35 @@
                 $(function () {
 
                     $('#calendar').fullCalendar({
-                        plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+                        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
                         header: {
                             left: 'prev,next today',
                             center: 'title',
-                            right: 'dayGridMonth, timeGridMonth, timeGridDay, listMonth'
+                            // dayGridMonth, timeGridMonth, timeGridDay not workings
+                            right: 'dayGridMonth, timeGridMonth, timeGridDay, month , listMonth'
                         },
-                        buttonIcons: false, 
+                        buttonIcons: false,
                         navLinks: true,
-                        eventLimit: true, 
+                        eventLimit: true,
 
                         locale: 'pt-br',
 
                         eventRender: function (eventObj, $el) {
+                            // Analisando se o evento é o dia inteiro para modificar layout do hover
+                            var conteudo;
+                            if (eventObj.allDay) {
+                                conteudo = '<div>' + eventObj.description + '</div>' +
+                                    '<div><i class="far fa-clock"></i>' + ' ' + "Dia inteiro" + ' ' +
+                                    '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                            } else {
+                                conteudo = '<div>' + eventObj.description + '</div>' +
+                                    '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
+                                    '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                            }
                             $el.popover({
                                 title: eventObj.title,
                                 html: true,
-                                content: '<div>' + eventObj.description + '</div>' +
-                                    '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
-                                    '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
-                                ,
+                                content: conteudo,
                                 trigger:
                                     'hover',
                                 placement:
