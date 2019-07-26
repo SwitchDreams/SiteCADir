@@ -51,11 +51,11 @@ def ouvidoria(request):
         mensagem = MensagemOuvidoria(categoria=categoria)
         mensagem.save()
 
-        # Email do cadir(Tem que ser uma tupla)
-        to_email = ["pedro_a2312@hotmail.com"]
+        # Email do cadir(Tem que ser uma lista)
+        to_email = ["dreamsswitch@gmail.com"]
 
         # Enviando o e-mail
-        send_mail(assunto_enviado, corpo_do_texto, "brad@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org", to_email)
+        send_mail(assunto_enviado, corpo_do_texto, "brad@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org", to_email, html_message=corpo_do_texto)
         context["thanks"] = "E-mail enviado com sucesso"
     context["form"] = form
 

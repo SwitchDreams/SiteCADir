@@ -49,7 +49,7 @@
                                 {
                                     id: '{{ evento.id }}',
                                     allDay: {{ evento.isAllDay|lower }},
-                                    description: '{{ evento.desc }}',
+                                    description: '{{ evento.desc|truncatewords:20 }}',
                                     title: '{{ evento.title }}',
                                     start: '{{ evento.start_day|date:'Y-m-d' }}T{{ evento.start|time:"H:i" }}',
                                     end: '{{ evento.end_day|date:'Y-m-d' }}T{{ evento.end|time:"H:i" }}',
