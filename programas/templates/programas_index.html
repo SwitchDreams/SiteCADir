@@ -15,18 +15,19 @@
         {% csrf_token %}
         <div class="text-center"> {{ form }} <input class="btn btn-outline-dark" type="submit" value="Filtrar"></div>
     </form>
-
+        
     <br>
     <!-- Cartão Horizontal -->
     <div class="card" style="width: 100%;">
         <ul class="list-group list-group-flush">
             {% for programa in Programas %}
                 <li class="list-group-item">
-                    <div class="contain">
+                    <div class="container">
                         <div class="card-horizontal-img">
                             <a href=" {% url 'programas:show' pk=programa.id %} ">
                                 <img alt="Card image cap" src="{% get_media_prefix %}{{ programa.logo }}" width="128"
-                                     height="128"> </a>
+                                        height="128">
+                            </a>
                             <h5>{{ programa.nome }}</h5>
                         </div>
                         <div class="card-horizontal-desc">

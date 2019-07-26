@@ -9,12 +9,31 @@
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
     <link rel="icon" href="../media/CADir_logo.png">
+    <title>CADir UnB</title>
 
+    <link rel='stylesheet' href='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+
+
+    <!-- Vivus.js - lib de animações -->
     <script src="static/js/vivus.js"></script>
+    <!-- Font Awesome -->
     <script crossorigin="anonymous" defer
             integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
             src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"></script>
-    <title>CADir UnB</title>
+    <!-- Full calendar-->
+        <!-- CSS -->
+        {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.css"> {% endcomment %}
+    
+        <!-- JS -->
+        {% comment %} <script src="../static/js/calendar/core_main.js"></script>
+        <script src="../static/js/calendar/interactions_main.js"></script>
+        <script src="../static/js/calendar/daygrid_main.js"></script>
+        <script src="../static/js/calendar/list_main.js"></script>
+        <script src="../static/js/calendar/google_main.js"></script> {% endcomment %}
+
 
     <!-- Bootstrap -->
     <link
@@ -23,6 +42,7 @@
     <link rel="stylesheet" href="{% static "css/main_page.css" %}"/>
     <link rel="stylesheet" href="{% static "css/mini_timeline.css" %}"/>
     <link rel="stylesheet" href="{% static "css/programas.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/eventos.css" %}"/>
     <link
             rel="stylesheet" href="{% static "css/templates.css" %}"/>
     <!-- AOS Library-->
@@ -82,6 +102,17 @@
         </div>
     </nav>
 </div>
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js'></script>
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/jquery.min.js'></script>
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.js'></script>
+{% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/interaction/main.js"></script> {% endcomment %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/locale/pt-br.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+<script src="{% static 'js/main.js' %}"></script>
 
 {% block content %}{% endblock %}
 
@@ -92,15 +123,18 @@
             <h4>CADir UnB</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odio non nam, quibusdam ducimus dolorum
                 necessitatibus similique voluptatem id nulla.</p>
-            <strong>Contatos</strong>
-            <p>cadirunb@unb.com.br</p>
+            <p>
+                <a tagert="_blank" href="https://www.google.com.br/maps/place/Faculdade+de+Direito+da+Universidade+de+Bras%C3%ADlia/@-15.7595555,-47.8745767,17z/data=!3m1!4b1!4m5!3m4!1s0x935a3bb7f33f7907:0xecb7469b111b9d00!8m2!3d-15.7595555!4d-47.8723827">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+                Faculdade de Direito, Campus Darcy Ribeiro Asa norte
+            </p>
+            <h5><strong>Contatos</strong></h5>
+            <p>unb.cadir@gmail.comr</p>
             <a href="">
                 <i class="fab fa-facebook-square"></i>
             </a>
-            <a href="">
-                <i class="fab fa-twitter-square"></i>
-            </a>
-            <a href="">
+            <a href="https://instagram.com/cadirunb?igshid=bwzxl135vajk">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
@@ -136,12 +170,12 @@
     });
 </script>
 
-<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+{% comment %} <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="{% static 'js/main.js' %}"></script>
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> {% endcomment %}
+{% comment %} <script src="{% static 'js/calendar.js' %}"></script> {% endcomment %}
 </body>
 </html>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bleach_tags %}
+{% block content %}
+    <br> <!-- a navbar come um pedaço da página -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container text-center">
+                <img src="{% get_media_prefix %}{{ Evento.show_img }}" class="img-fluid rlx-bro">
+            </div>
+            <h1 class="text-center font-weight-bold"> {{ Evento.title}} </h1>
+            <p class="text-center">{{Evento.desc}}</p>
+            <div class="container">
+                <div class="jumbotron">
+                    <h2 class="text-center">E como vai funcionar?</h2>
+                    <div class="text-center">
+                        <ul>
+                            {% if Evento.start_day == Evento.end_day %}
+                                <li>O evento será dia {{ Evento.start_day }}</li>
+                            {% else %}
+                                <li>O evento será de {{ Evento.start_day }} até {{ Evento.end_day }}</li>
+                            {% endif%}
+                            <li>Das {{ Evento.start }} às {{ Evento.end}}</li>
+                            <li>Local: {{ Evento.local }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

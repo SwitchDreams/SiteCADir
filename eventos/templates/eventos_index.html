@@ -7,5 +7,67 @@
     <br>
     <br>
     <br>
-    <h1> Futura Página dos Eventos</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Eventos CADir UnB</h1>
+            <script>
+                $(function () {
+
+                    $('#calendar').fullCalendar({
+                        plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'dayGridMonth, timeGridMonth, timeGridDay, listMonth'
+                        },
+                        buttonIcons: false, 
+                        navLinks: true,
+                        eventLimit: true, 
+
+                        locale: 'pt-br',
+
+                        eventRender: function (eventObj, $el) {
+                            $el.popover({
+                                title: eventObj.title,
+                                html: true,
+                                content: '<div>' + eventObj.description + '</div>' +
+                                    '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
+                                    '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                                ,
+                                trigger:
+                                    'hover',
+                                placement:
+                                    'top',
+                                container:
+                                    'body'
+                            })
+                            ;
+                        },
+
+                        events: [
+                            {% for evento in Eventos %}
+                                {
+                                    id: '{{ evento.id }}',
+                                    allDay: {{ evento.isAllDay|lower }},
+                                    description: '{{ evento.desc }}',
+                                    title: '{{ evento.title }}',
+                                    start: '{{ evento.start_day|date:'Y-m-d' }}T{{ evento.start|time:"H:i" }}',
+                                    end: '{{ evento.end_day|date:'Y-m-d' }}T{{ evento.end|time:"H:i" }}',
+                                    start_time: '{{ evento.start|time:"H:i" }}',
+                                    end_time: '{{ evento.end|time:"H:i" }}',
+                                    local: '{{ evento.local }}',
+                                    backgroundColor: '#001652',
+                                    borderColor: '#001652',
+                                    textColor: 'white',
+                                    url: '{% url 'eventos:show' pk=evento.id %}'
+                                },
+                            {% endfor %}
+                        ]
+                    });
+                });
+            </script>
+            <br>
+            <div id='calendar'></div>
+        </div>
+    </div>
 {% endblock %}
