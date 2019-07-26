@@ -18,9 +18,6 @@ class Programa(models.Model):
     text = models.TextField('descricao')
     email = models.CharField('email', max_length=120)
 
-    #imagem que vai ficar no show
-    show_img = models.ImageField('show_img', upload_to='programas_show_img', default='martelo.jpg')
-
     # Tipo(Analisar se vale a pena uma barra de pesquisa via forms ou via js)
     tipo = models.CharField('tipo', max_length=3, choices=TIPOS_CHOICES, default='OUT')
 

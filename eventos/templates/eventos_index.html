@@ -14,9 +14,17 @@
                 $(function () {
 
                     $('#calendar').fullCalendar({
-                        plugins: ['dayGridPlugin'],
+                        plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'dayGridMonth, timeGridMonth, timeGridDay, listMonth'
+                        },
+                        buttonIcons: false, 
+                        navLinks: true,
+                        eventLimit: true, 
 
-                        defaultView: 'month',
+                        locale: 'pt-br',
 
                         eventRender: function (eventObj, $el) {
                             $el.popover({
@@ -43,8 +51,8 @@
                                     allDay: {{ evento.isAllDay|lower }},
                                     description: '{{ evento.desc }}',
                                     title: '{{ evento.title }}',
-                                    start: '{{ evento.day|date:'Y-m-d' }}T{{ evento.start|time:"H:i" }}',
-                                    end: '{{ evento.day|date:'Y-m-d' }}T{{ evento.end|time:"H:i" }}',
+                                    start: '{{ evento.start_day|date:'Y-m-d' }}T{{ evento.start|time:"H:i" }}',
+                                    end: '{{ evento.end_day|date:'Y-m-d' }}T{{ evento.end|time:"H:i" }}',
                                     start_time: '{{ evento.start|time:"H:i" }}',
                                     end_time: '{{ evento.end|time:"H:i" }}',
                                     local: '{{ evento.local }}',

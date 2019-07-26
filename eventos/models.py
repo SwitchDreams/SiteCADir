@@ -10,7 +10,8 @@ class Evento(models.Model):
     local = models.CharField('Local', max_length=60, default='FD, UnB')
 
     #  Datas
-    day = models.DateField('Dia')
+    start_day = models.DateField('Dia em que o Evento começa')
+    end_day = models.DateField('Dia em que o Evento Acaba')
     isAllDay = models.BooleanField('É o dia inteiro?')
     start = models.TimeField('Horário de começo')
     end = models.TimeField('Horário de término')
