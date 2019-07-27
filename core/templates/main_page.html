@@ -55,7 +55,7 @@
             <div class="text-center">
                 <h2>Algum Título Qualquer Sobre o CADir</h2>
             </div>
-            <p align="justify">{% lorem 2%}</p>
+            <p align="justify">{% lorem 2 %}</p>
             <div class="text-center">
                 <a class="btn btn-primary" href="{% url 'institucional:institucional_index' %}">Ler Mais</a>
             </div>
@@ -103,7 +103,7 @@
         </div>
     </div>
 
-    <!-- Escolhe Aleatoriamente 4 Programas -->
+    <!-- Programas do direito -->
     <div class="">
         <section id="responsive">
             <div class="container-fluid">
@@ -151,28 +151,36 @@
                     <li data-target="#carouselEventos" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../../media/domino.jpg" class="img-fluid d-block high-brightness">
-                        <div class="carousel-caption">
-                            <h3>Evento 1</h3>
-                            <p>{% lorem 5 w %}</p>
+
+                    {% for evento in Eventos %}
+                        <div class="carousel-item {% if forloop.first %} active {% endif %}">
+
+                            <img src="{% get_media_prefix %}{{ evento.show_img }}"
+                                 class="img-fluid d-block high-brightness">
+
+                            <a class="nounderline" href="{% url 'eventos:show' pk=evento.id %}">
+                                <div class="carousel-caption">
+                                    <h3>{{ evento.title }}</h3>
+                                    <p>{{ evento.desc | truncatewords:8 }}</p>
+                                    <div>
+                                        {% if evento.start_day == evento.end_day %}
+                                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} <br>
+                                        {% else %}
+                                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} -
+                                            {{ evento.end_day }}<br>
+                                        {% endif %}
+                                        {% if evento.isAllDay %}
+                                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
+                                        {% else %}
+                                            <i class="far fa-clock"></i> {{ evento.start }} - {{ evento.end }}
+                                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
+                                        {% endif %}
+                                    </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../media/law.jpg" class="img-fluid d-block high-brightness">
-                        <div class="carousel-caption">
-                            <h3>Evento 2</h3>
-                            <p>{% lorem 5 w %}</p>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../media/oculos.jpg" class="img-fluid d-block high-brightness">
-                        <div class="carousel-caption">
-                            <h3>Evento 3</h3>
-                            <p>{% lorem 5 w %}</p>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
+
                 <a href="#carouselEventos" class="carousel-control-prev" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                     <span class="sr-only">prev</span>
@@ -188,6 +196,6 @@
                 <a class="btn btn-primary" href="{% url 'eventos:eventos_index' %}">Ver Mais Eventos</a>
             </div>
         </div>
-
+    </div>
     </div>
 {% endblock %}
