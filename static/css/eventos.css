@@ -1,7 +1,27 @@
+:root {
+    --cadir-blue-faded: #3c5a8c;
+    --cadir-blue: #001652;
+    --bg-white: #f3f3f3;
+    --bg-white-nav: #ececec;
+}
+
 .rlx-bro {
     height: 15rem;
 }
 
 p.text-center {
     font-size: 18px;
+}
+
+/* ===== Estilos dos Botões ======= */
+
+.fc-state-default, .fc-state-active {
+    background:var(--cadir-blue);
+    color: white;
+    border-color: var(--cadir-blue);
+    text-shadow: none;
+}
+.fc-state-hover {
+    background:var(--cadir-blue);
+    color: white;
 }

@@ -25,7 +25,11 @@
                             {% else %}
                                 <li>O evento será de {{ Evento.start_day }} até {{ Evento.end_day }}</li>
                             {% endif%}
-                            <li>Das {{ Evento.start }} às {{ Evento.end}}</li>
+                            {% if Evento.isAllDay %}
+                                <li> O dia todo </li>
+                            {% else %}
+                                <li>Das {{ Evento.start }} às {{ Evento.end}}</li>
+                            {% endif %}
                             <li>Local: {{ Evento.local }}</li>
                         </ul>
                     </div>
