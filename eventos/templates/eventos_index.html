@@ -11,8 +11,19 @@
         <div class="jumbotron">
             <h1 class="text-center">Eventos CADir UnB</h1>
             <script>
+                // A url dessa API recebe os seguintes parâmetros:
+                // json = true -> para receber os dados em json
+                // ano = 2019 -> ano dos feriados
+                // ibge = 5300108 -> código ibge da cidade, no caso esse é o de brasília
+                // token = ZHJlYW1zc3dpdGNoQGdtYWlsLmNvbSZoYXNoPTExODE3Mjk0OQ -> token de acesso a api (não sei onde colocar qnd dermos o deploy)
+                const api_url = 'https://api.calendario.com.br/?json=true&ano=2019&ibge=5300108&token=ZHJlYW1zc3dpdGNoQGdtYWlsLmNvbSZoYXNoPTExODE3Mjk0OQ';
+                async function get_hollidays (api_url) {
+                    const response = await fetch(api_url);
+                    const data = await response.json();
+                    console.log(data);
+                }
+                get_hollidays(api_url);
                 $(function () {
-
                     $('#calendar').fullCalendar({
                         plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
                         header: {
