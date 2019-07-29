@@ -6,6 +6,7 @@ app_name = 'institucional'
 urlpatterns = [
     # Index Path
     path('', views.index, name='institucional_index'),
-    # Show Path
+    # Path Postagens
+    path('postagens', views.postagens_index, name='postagens_index'),
     path('postagem/<str:pk>', views.postagem_show, name='postagem_show')
 ]
