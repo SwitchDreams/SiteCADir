@@ -19,6 +19,23 @@
                 {% endfor %}
             </div>
 
+            <div class="pagination padding text-center">
+                <span class="step-links">
+                    {% if Postagens.has_previous %}
+                        <a class="btn btn-info" href="?page=1">&laquo; Primeira </a>
+                        <a class="btn btn-info" href="?page={{ Postagens.previous_page_number }}"> Anterior</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ Postagens.number }} of {{ Postagens.paginator.num_pages }}.
+                    </span>
+
+                    {% if Postagens.has_next %}
+                        <a class="btn btn-info" href="?page={{ Postagens.next_page_number }}">Próxima</a>
+                        <a class="btn btn-info" href="?page={{ Postagens.paginator.num_pages }}">Última &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
         </div>
     </div>
 {% endblock %}
