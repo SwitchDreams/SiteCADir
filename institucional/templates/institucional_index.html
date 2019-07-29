@@ -4,6 +4,20 @@
     <div class="container padding">
         <div class="jumbotron">
             <h1 class="text-center">Institucional</h1>
+
+            <h2 class="pt-2">Postagens Recentes</h2>
+            <div class="list-group">
+                {% for postagem in Postagens %}
+                    <a href="{% url 'institucional:postagem_show' pk=postagem.nome %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ postagem.nome }}</h5>
+                            <small>{{ postagem.created_at }} </small>
+                        </div>
+                        <p class="mb-1"> {{ postagem.desc }}</p>
+                        <small>Editado em:{{ postagem.updated_at  }}</small>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

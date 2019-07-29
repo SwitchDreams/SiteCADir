@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    <div class="container padding">
+        <div class="jumbotron">
+            <h1 class="text-center">{{ Postagem.nome }}</h1>
+            <small> Criado em: {{ Postagem.created_at }} </small><br>
+            <small> Atualizado em: {{ Postagem.updated_at }} </small>
+            <div class="text-center padding">
+                {{ Postagem.text|safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
