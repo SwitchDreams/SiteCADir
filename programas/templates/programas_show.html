@@ -8,12 +8,15 @@
     <br>
     <br>
     <br>
+    <div id="programas-fixed"
+         style="background: url('{% get_media_prefix %}{{ Programa.show_img }}') no-repeat center center fixed;">
+    </div>
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <h1 class="text-center font-weight-bold"> {{ Programa.nome }} </h1>
-            <!--<div class="text-center d-block">
-                <img src="{% get_media_prefix %}{{ Programa.logo }}" alt="Logo">
-            </div>-->
+            {% comment %} <div class="text-center d-block">
+                <img src="{% get_media_prefix %}{{ Programa.show_img }}" alt="Logo">
+            </div> {% endcomment %}
             {{ Programa.text|safe }}
                 <!-- <br>
                 <div class="text-center">

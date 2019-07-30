@@ -21,6 +21,9 @@ class Programa(models.Model):
     # Tipo(Analisar se vale a pena uma barra de pesquisa via forms ou via js)
     tipo = models.CharField('tipo', max_length=3, choices=TIPOS_CHOICES, default='OUT')
 
+    # Imagem que vai aparecer em cima da descrição
+    show_img = models.ImageField('show_img', upload_to='programas_show_img', default='martelo.jpg')
+
     # Link to social medias
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)

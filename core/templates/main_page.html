@@ -55,7 +55,7 @@
             <div class="text-center">
                 <h2>Algum Título Qualquer Sobre o CADir</h2>
             </div>
-            <p align="justify">{% lorem 2 %}</p>
+            <p align="justify">O Centro Acadêmico de Direito da Universidade de Brasília é o órgão representativo de todas/os estudantes de Direito da UnB. Trata-se de associação independente e plural, fundada em 25 de novembro de 1993 e filiada à União Nacional dos Estudantes. Seu principal objetivo é representar e defender os interesses discentes. Ao desenvolver atividades acadêmicas, sociais, políticas, jurídicas, culturais e recreativas, visa enriquecer a formação das/os estudantes de Direito. Além disso, objetiva fortalecer e mobilizar as entidades estudantis. Sobretudo, traduz-se em instrumento de luta por uma Universidade pública, de qualidade, e pela defesa de direitos, da igualdade e da justiça social.</p>
             <div class="text-center">
                 <a class="btn btn-primary" href="{% url 'institucional:institucional_index' %}">Ler Mais</a>
             </div>
@@ -99,7 +99,7 @@
             <div class="text-center">
                 <h2>Programas da Faculdade de Direito - UnB</h2>
             </div>
-            <p align="justify">{% lorem %}</p>
+            <p align="justify">O corpo discente da Faculdade de Direito é bastante ativo, há uma diversidade de programas de iniciativa estudantil, estes permitem que os alunos se engajem em atividades de extensão, um dos componentes do tripé que constitui a proposta inicial pensada para a Universidade de Brasília, empresa júnior e atlética. Essas iniciativas expandem os horizontes e enriquecem a vivência acadêmica.</p>
         </div>
     </div>
 
@@ -136,12 +136,12 @@
             <div class="text-center">
                 <h2> Eventos do Direito UnB</h2>
             </div>
-            <p align="justify">{% lorem 2 %}</p>
+            <p align="justify">Sabemos que a formação de um bom jurista vai muito além da sala de aula. Por mais importantes que sejam os conteúdos ministrados, atividades extracurriculares são essenciais não só na formação acadêmica, mas de um cidadão. Tendo isso em mente, o Centro Acadêmico de Direito criou um espaço para que os estudantes possam se inteirar dos diversos eventos relacionados ao Direito que ocorrem semestralmente na Universidade. Então marque na sua agenda e fique por dentro das diversas atividades que ocorrem pelo campus!</p>   
         </div>
     </div>
 
     <!-- Slider Eventos-->
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div id="shrink">
             <div id="carouselEventos" data-interval="3000" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -195,5 +195,36 @@
                 <a class="btn btn-primary" href="{% url 'eventos:eventos_index' %}">Ver Mais Eventos</a>
             </div>
         </div>
+    </div> -->
+    <!-- Disposição alternativa dos eventos -->
+    <div class="container guias">
+        <div class="row">
+            {% for evento in Eventos %}
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 py-2">
+                    <a href="{% url 'eventos:show' pk=evento.id %}"><h4>{{ evento.title }}</h4><a>
+                    <hr class="socket">
+                    <p allign="justify">{{ evento.desc | truncatewords:20 }}</p>
+                    <div>
+                        {% if evento.start_day == evento.end_day %}
+                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} <br>
+                        {% else %}
+                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} -
+                            {{ evento.end_day }}<br>
+                        {% endif %}
+                        {% if evento.isAllDay %}
+                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
+                        {% else %}
+                            <i class="far fa-clock"></i> {{ evento.start }} - {{ evento.end }}
+                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="text-center ver-mais">
+            <a class="btn btn-primary" href="{% url 'eventos:eventos_index' %}">Mais Eventos</a>
+        </div>
     </div>
+    
 {% endblock %}
