@@ -18,7 +18,7 @@
                 <img src="{% get_media_prefix %}{{ Programa.show_img }}" alt="Logo">
             </div> {% endcomment %}
             {{ Programa.text|safe }}
-                <!-- <br>
+            <!-- <br>
                 <div class="text-center">
                     <i class="far fa-envelope fa-5x"></i><br>
                     {{ Programa.email }}
@@ -43,13 +43,21 @@
                         {% if Programa.instagram %}
                             <a id="instagram" href="{{ Programa.instagram }}"><i class="fab fa-instagram fa-3x"></i></a>
                         {% endif %}
-                        
+
                         {% if Programa.twitter %}
-                            <a id="twitter" href="{{ Programa.twitter }}"><i class="fab fa-twitter-square fa-3x"></i></a>
+                            <a id="twitter" href="{{ Programa.twitter }}"><i
+                                    class="fab fa-twitter-square fa-3x"></i></a>
                         {% endif %}
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
+
+    <script>
+        var audio_content = "{{ test_audio_content }}";
+        var snd = new Audio("data:audio/mp3;base64," + audio_content);
+        console.log(snd);
+        snd.play();
+    </script>
 {% endblock %}
