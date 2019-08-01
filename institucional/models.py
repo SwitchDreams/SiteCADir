@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -18,3 +19,20 @@ class Postagem(models.Model):
     class Meta:
         verbose_name = "Postagem"
         verbose_name_plural = "Postagens"
+
+class TextoHistorico(models.Model):
+    texto = models.TextField('Texto', help_text='Texto no qual se encontra no ver mais do histórico do CADir')
+
+    def __str__(self):
+        return "Texto do histórico do CADir"
+
+    def save(self, *args, **kwargs):
+        if TextoHistorico.objects.exists() and not self.pk:
+            # if you'll not check for self.pk
+            # then error will also raised in update of exists model
+            raise ValidationError('Só pode ser criado um Texto sobre o histórico do CADir/Edite o que já existe')
+        return super(TextoHistorico, self).save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = "Texto do histórico do CADir"
+        verbose_name = "Texto do histórico do CADir"

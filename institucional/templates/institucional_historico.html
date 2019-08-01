@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load tz %}
+{% block content %}
+    <div class="container padding">
+        <div class="jumbotron">
+            <h1 class="text-center">Histórico CADir UnB</h1>
+            {{ historico.texto|safe }}
+        </div>
+    </div>
+{% endblock %}

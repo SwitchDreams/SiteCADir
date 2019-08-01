@@ -8,5 +8,6 @@ urlpatterns = [
     path('', views.index, name='institucional_index'),
     # Path Postagens
     path('postagens', views.postagens_index, name='postagens_index'),
-    path('postagem/<str:pk>', views.postagem_show, name='postagem_show')
+    path('postagem/<str:pk>', views.postagem_show, name='postagem_show'),
+    path('historico', views.historico, name='institucional_historico'),
 ]
