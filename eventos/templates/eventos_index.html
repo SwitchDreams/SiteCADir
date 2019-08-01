@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block content %}
     <br>
     <br>
@@ -10,7 +11,10 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="text-center">Eventos CADir UnB</h1>
-            <script src="../../static/js/eventos.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/locales/pt-br.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/google-calendar/main.min.js"></script>
+            <script src="{% static 'js/eventos.js' %}"></script>
             <script>
                 function get_bd_events() {
                     const eventos = [
@@ -30,16 +34,17 @@
                                 textColor: 'white',
                                 url: '{% url 'eventos:show' pk=evento.id %}',
                                 hover: true
-                                },
+                            },
                         {% endfor %}
-                    ]
+                    ];
                     return eventos;
                 }
-                const eventos = get_eventos(get_bd_events());
-                console.log(eventos)
+
+                const eventos_bd = get_bd_events();
+
                 $(function () {
                     $('#calendar').fullCalendar({
-                        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+                        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list', 'googleCalendar'],
                         header: {
                             left: 'prev,next today',
                             center: 'title',
@@ -52,17 +57,25 @@
 
                         locale: 'pt-br',
 
+                        // Chave gerada por Pedro
+                        googleCalendarApiKey: 'AIzaSyAfBpIxPqA-wYTjjAPCazj9DIXXjmLP6gM',
+
+                        // BR Holidays
+                        events: 'en.brazilian#holiday@group.v.calendar.google.com',
+
                         eventRender: function (eventObj, $el) {
                             // Analisando se o evento é o dia inteiro para modificar layout do hover
-                            var conteudo;
-                            if (eventObj.allDay) {
-                                conteudo = '<div>' + eventObj.description + '</div>' +
-                                    '<div><i class="far fa-clock"></i>' + ' ' + "Dia inteiro" + ' ' +
-                                    '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
-                            } else {
-                                conteudo = '<div>' + eventObj.description + '</div>' +
-                                    '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
-                                    '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                            var conteudo = '';
+                            if (eventObj.hover) {
+                                if (eventObj.allDay) {
+                                    conteudo = '<div>' + eventObj.description + '</div>' +
+                                        '<div><i class="far fa-clock"></i>' + ' ' + "Dia inteiro" + ' ' +
+                                        '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                                } else {
+                                    conteudo = '<div>' + eventObj.description + '</div>' +
+                                        '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
+                                        '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                                }
                             }
                             $el.popover({
                                 title: eventObj.title,
@@ -74,10 +87,8 @@
                                     'top',
                                 container:
                                     'body'
-                            })
-                            ;
+                            });
                         },
-                        events: eventos,
                     });
                 });
             </script>
