@@ -16,12 +16,20 @@ p.text-center {
 /* ===== Estilos dos Botões ======= */
 
 .fc-state-default, .fc-state-active {
-    background:var(--cadir-blue);
+    background: var(--cadir-blue);
     color: white;
     border-color: var(--cadir-blue);
     text-shadow: none;
 }
+
 .fc-state-hover {
-    background:var(--cadir-blue);
+    background: var(--cadir-blue);
     color: white;
+}
+
+@media (max-width: 768px){
+    .fc-toolbar .fc-left, .fc-toolbar .fc-center, .fc-toolbar .fc-right {
+        display: inline-block;
+        float: none !important;
+    }
 }
