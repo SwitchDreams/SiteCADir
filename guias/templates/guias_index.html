@@ -11,7 +11,7 @@
                     <!-- Redireciona para o dowload do arquivo ou o link ou nada -->
                     <a href="{% if guias.file %} {% get_media_prefix %}{{ guias.file }}
                                 {% elif guias.link %} {{ guias.link }}
-                                {% else %} # {% endif %}"
+                                {% else %} # {% endif %}" target="_blank"
                        class="list-group-item list-group-item-action">
                         {% if guias.file or guias.link %}
                             <span class="text-primary"> {{ guias.nome }} </span>

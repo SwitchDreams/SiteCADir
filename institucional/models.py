@@ -13,6 +13,7 @@ class Postagem(models.Model):
 
     created_at = models.DateTimeField('created at', auto_now_add=True)
     updated_at = models.DateTimeField('updated at', auto_now=True)
+
     def __str__(self):
         return self.nome
 
@@ -20,6 +21,20 @@ class Postagem(models.Model):
         verbose_name = "Postagem"
         verbose_name_plural = "Postagens"
 
+# Model relacionada as prestações de conta
+class PrestacaoDeContas(models.Model):
+    nome = models.CharField('Nome', max_length=60, help_text='Nome que aparecerá no site(Institucional)')
+    # File para dowload
+    file = models.FileField('Arquivo', upload_to='prestacao_de_contas_pdf')
+
+    def __str__(self):
+        return self.nome
+
+    class Meta:
+        verbose_name_plural = "Prestações de Conta"
+        verbose_name = "Prestação de conta"
+
+# Model relacionada ao Texto do histórico do CADir
 class TextoHistorico(models.Model):
     texto = models.TextField('Texto', help_text='Texto no qual se encontra no ver mais do histórico do CADir')
 

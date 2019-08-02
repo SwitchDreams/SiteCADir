@@ -1,39 +1,83 @@
 {% extends 'base.html' %}
 
 {% load tz %}
+{% load static %}
 {% block content %}
     <div class="container padding">
         <div class="jumbotron">
             <h1 class="text-center">Institucional</h1>
 
-            <h2 class="pt-2"> O que é um centro acadêmico ?</h2>
-            <p> {% lorem %}</p>
+            <div class="py-3">
+                <h2> O que é um centro acadêmico ?</h2>
+                <p> O Centro Acadêmico exerce o papel de uma associação estudantil que integra os estudantes de seu
+                    respectivo curso por meio de conselhos e assembleias, levando as pautas destes para a sociedade
+                    civil, amplificando a voz do corpo estudantil e enriquecendo os debates. Esse direito é
+                    regulamentado pela Lei Federal nº 7.395 de 31 de outubro de 1985.</p>
 
-            <h2 class="pt-2">Postagens Recentes</h2>
-            <div class="list-group">
-                {% for postagem in Postagens %}
-                    <a href="{% url 'institucional:postagem_show' pk=postagem.nome %}"
-                       class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">{{ postagem.nome }}</h5>
-                            <small>{{ postagem.created_at|timesince:Hoje }} </small>
-                        </div>
-                        <p class="mb-1"> {{ postagem.desc }}</p>
-                    </a>
-                {% endfor %}
+                <p>Discussões são realizadas nas assembleias estudantis e nos conselhos, tanto no âmbito das
+                    universidades como em outras instituições. Desse modo, o CA procura encontrar soluções para as
+                    problemáticas que afligem os estudantes, com o objetivo de melhorar o espaço de aprendizado do corpo
+                    discente e estabelecer um diálogo entre aqueles que formam a Faculdade de Direito como um todo.</p>
+
+                <p>No caso do CADir, diversas gestões escreveram suas histórias e o papel destas até hoje pode ser
+                    estudado para revelar um aspecto histórico do corpo estudantil.</p>
             </div>
 
-            <div class="text-center ver-mais">
-                <a class="btn btn-primary" href="{% url 'institucional:postagens_index' %}">Ver todas as postagens</a>
+            <div class="py-3">
+                <h2>Postagens Recentes</h2>
+                <div class="list-group">
+                    {% for postagem in Postagens %}
+                        <a href="{% url 'institucional:postagem_show' pk=postagem.nome %}"
+                           class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ postagem.nome }}</h5>
+                                <small>{{ postagem.created_at|timesince:Hoje }} </small>
+                            </div>
+                            <p class="mb-1"> {{ postagem.desc }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+
+                <div class="text-center ver-mais">
+                    <a class="btn btn-primary" href="{% url 'institucional:postagens_index' %}">Ver todas as
+                        postagens</a>
+                </div>
             </div>
 
-            <h2 class="pt-2"> Acesso ao drive das atas </h2>
-            <p> {% lorem %}</p>
 
-            <h2 class="pt-2"> Histórico do CADir</h2>
-            <p> {% lorem %}</p>
-            <div class="text-center ver-mais">
-                <a class="btn btn-primary" href="{% url 'institucional:institucional_historico' %}"> Histórico Completo</a>
+            <div class="py-3">
+                <h2> Prestação de contas </h2>
+                <p> Tendo em mente a relevância do papel do CADir de representar os estudantes da Faculdade de Direito e
+                    a
+                    confiança na gestão eleita, faz-se expresso o dever de prestação de contas e de manutenção da
+                    transparência.</p>
+
+                {% if not PrestacaoContas %}
+                    <p> Ainda não foi adicionada nenhuma prestação de contas</p>
+                {% else %}
+                    {% for prestacao in PrestacaoContas %}
+                        <a href="{% get_media_prefix %}{{ prestacao.file }}" target="_blank"> {{ prestacao.nome }}</a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="py-3">
+                <h2> Histórico do CADir</h2>
+                <p> {% lorem %}</p>
+                <div class="text-center ver-mais">
+                    <a class="btn btn-primary" href="{% url 'institucional:institucional_historico' %}"> Histórico
+                        Completo</a>
+                </div>
+            </div>
+
+            <div class="py-3">
+                <h2> Acesso ao drive das atas </h2>
+                <a href="#" target="_blank"> Link para o drive </a>
+            </div>
+
+            <div class="py-3">
+                <h2> Estatuto </h2>
+                <a href="#" target="_blank"> Estatuto </a>
             </div>
 
         </div>
