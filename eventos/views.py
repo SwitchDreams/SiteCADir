@@ -17,3 +17,4 @@ def show(request, **kwargs):
         "Evento": Evento.objects.filter(id=int(kwargs['pk'])).get()
     }
     return render(request, template_name, context)
+

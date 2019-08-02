@@ -25,6 +25,20 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
 }
 
+/* ========== Estilos referentes aos títulos e parágrafos da página principal ========== */
+.custom-title {
+    text-transform: uppercase;
+    word-spacing: -2px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+}
+
+.custom-paragraph {
+
+}
+
+/* =================================================== */
 .card {
     /* Adicionando uma largura máxima para não distorcer a imagem*/
     box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
@@ -39,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fixed {
-    background: url('../../media/martelo.jpg') no-repeat center center fixed;
+    background: url('../../media/FD_4.jpeg') no-repeat center center fixed;
     display: table;
     height: 60%;
     position: relative;
@@ -48,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fixed2 {
-    background: url('../../media/oculos.jpg') no-repeat center center fixed;
+    background: url('../../media/FD_6.JPG') no-repeat center center fixed;
     display: table;
     height: 60%;
     position: relative;
@@ -68,14 +82,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #first-slider {
     background-image: linear-gradient(rgba(255, 255, 255, 0.255), rgba(255, 255, 255, 0.25)), url("../../media/law.jpg");
-}
-
-#second-slider {
-
-}
-
-#third-slider {
-
 }
 
 .carousel-caption {
@@ -111,27 +117,9 @@ h1, h2, h3, h4, h5, h6 {
     border-top: .15rem solid var(--cadir-blue);
 }
 
-
-/* Horizontal Cards Programs*/
-/* .card-horizontal{
-    Adicionando uma largura máxima para não distorcer a imagem
-    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+.eventos .socket {
+    border-top: .15rem solid var(--cadir-blue);
 }
-
-.card-horizontal-desc {
-    display: inline-block;
-    float: right;
-    width: 80%;
-    height: 150px;
-}
-.card-horizontal-img{
-    display: inline-block;
-    float: left;
-    width: 20%;
-    height: 150px;
-    align-content: center;
-} */
-
 
 a:active {
     outline: none;
@@ -177,23 +165,14 @@ a:active {
 
 }
 
-/*==========SLIDER DOS EVENTOS===================*/
+/*========== EVENTOS ===================*/
 
-#shrink .carousel .carousel-item {
-    height: 300px;
+.eventos h4 {
+    color: var(--cadir-blue);
 }
 
-#shrink .carousel-item img {
-    position: absolute;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    min-height: 500px;
-}
-
-.nounderline {
-    text-decoration: none !important;
-    color: inherit;
+.eventos a {
+    text-decoration: none;
 }
 
 /* ============ Error Pages ====================*/
