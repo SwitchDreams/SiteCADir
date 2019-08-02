@@ -33,18 +33,19 @@ class Programa(models.Model):
     site = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
 
-    # Audio
-    audio = models.FileField(upload_to='media/audio_programas', blank=True)
-
     def save(self, *args, **kwargs):
+        # Clean text
         text_clean = bleach.clean(self.text, tags=[],
                                   attributes={},
                                   styles=[],
                                   strip=True)
         text_clean = text_clean.replace('&nbsp;', '')
-        print(text_clean)
+
+        # Text to speech
         tts = gTTS(text_clean, lang='pt-br')
-        self.audio = tts.save('media/audio_programas/' + str(self.id) + '.mp3')
+        tts.save('media/audio/programas/' + str(self.id) + '.mp3')
+
+        # Save model atributes
         return super(Programa, self).save(*args, **kwargs)
 
     def __str__(self):
