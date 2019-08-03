@@ -38,3 +38,23 @@ def monitoria(request):
     template_name = 'monitoria.html'
     context = {}
     return render(request, template_name, context)
+
+def pcne(request):
+    template_name = 'pcne.html'
+    context = {}
+    return render(request, template_name, context)
+
+def predios(request):
+    template_name = 'predios_unb.html'
+    context = {}
+    return render(request, template_name, context)
+
+def tranferencia(request):
+    template_name = 'transferencia.html'
+    context = {}
+    return render(request, template_name, context)
+
+def transporte(request):
+    template_name = 'transporte.html'
+    context = {}
+    return render(request, template_name, context)

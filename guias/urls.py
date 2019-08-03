@@ -11,5 +11,9 @@ urlpatterns = [
     path('fluxo', views.fluxo, name='fluxo'),
     path('manual_do_calouro', views.calouro, name='manual_do_calouro'),
     path('matricula_web', views.matricula_web, name='matricula_web'),
-    path('monitoria', views.monitoria, name='monitoria')
+    path('monitoria', views.monitoria, name='monitoria'),
+    path('pcne', views.pcne, name='pcne'),
+    path('predios_unb', views.predios, name='predios_unb'),
+    path('transferencia', views.tranferencia, name='transferencia'),
+    path('transporte', views.transporte, name='transporte')
 ]
