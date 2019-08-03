@@ -7,10 +7,13 @@
 
 /* =========== utilitários ============ */
 .center {
-    
 }
 
 /* ========== Cards dos guias ========== */
+
+.card-deck {
+    padding: 50px 0;
+}
 
 .card-deck .card {
     max-width: calc(25% - 30px);
