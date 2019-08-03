@@ -23,3 +23,18 @@ def fluxo(request):
     template_name = 'fluxo.html'
     context = {}
     return render(request, template_name, context)
+
+def calouro(request):
+    template_name = 'manual_do_calouro.html'
+    context = {}
+    return render(request, template_name, context)
+
+def matricula_web(request):
+    template_name = 'matricula_web.html'
+    context = {}
+    return render(request, template_name, context)
+
+def monitoria(request):
+    template_name = 'monitoria.html'
+    context = {}
+    return render(request, template_name, context)
