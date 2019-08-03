@@ -45,3 +45,7 @@
 .text-primary {
     color: var(--cadir-blue) !important;
 }
+
+.card-link a {
+    color: red !important;
+}
