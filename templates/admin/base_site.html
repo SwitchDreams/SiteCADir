@@ -1,0 +1,77 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+{% block title %}{{ title }}Site CADir{% endblock %}
+
+{% block extrahead %}
+    <!-- Our css -->
+    <link rel="stylesheet" href="{% static "css/main_page.css" %}"/>
+{% endblock %}
+
+{% block extrastyle %}
+    <style>
+        #site-name {
+            font-family: 'Oswald', sans-serif;
+            color: var(--bg-white-nav);
+        }
+
+        #header {
+            font-family: 'Oswald', sans-serif;
+            background-color: var(--cadir-blue);
+            color: var(--bg-white-nav);
+        }
+
+        #branding h1 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--bg-white-nav);
+        }
+
+        #content-main section {
+            color: var(--bg-white-nav);
+        }
+
+        .module h2, .module caption, .inline-group h2 {
+            background-color: var(--cadir-blue);
+        }
+
+        .breadcrumbs {
+            background-color: var(--cadir-blue) !important;
+        }
+
+
+        .button, input[type=submit], input[type=button], .submit-row input, a.button {
+            background-color: var(--cadir-blue);
+        }
+
+        .h1 {
+            color: var(--bg-white-nav);
+        }
+
+        body.login {
+            /* The image used */
+            background-image: url('../../media/FD_7.JPG') !important;
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .login #container {
+            border: 1px solid #000000 !important;
+            border-radius: 8px !important;
+        }
+    </style>
+{% endblock %}
+{% block branding %}
+    <h1 id="site-name"> Site CADir - Painel Administrativo</h1>
+
+{% endblock %}
+
+{% block content_title %}
+    <h1> Seja bem vindo ao painel administrativo do site do CADir UnB !! <br>Para entender o funcionamento do painel
+        veja os vídeos tutoriais no final da página</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
