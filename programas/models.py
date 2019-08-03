@@ -33,7 +33,7 @@ class Programa(models.Model):
     site = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
 
-    def save(self, *args, **kwargs):
+    def tts(self):
         # Clean text
         text_clean = bleach.clean(self.text, tags=[],
                                   attributes={},
@@ -45,8 +45,20 @@ class Programa(models.Model):
         tts = gTTS(text_clean, lang='pt-br')
         tts.save('media/audio/programas/' + str(self.id) + '.mp3')
 
-        # Save model atributes
-        return super(Programa, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        # Se não for a primeira vez
+        if not self.pk:
+            print('PASSOU NA PRIMA')
+            super(Programa, self).save(*args, **kwargs)
+            self.tts()
+        else:
+            print('PASSOU NA SEGUNDA')
+            old = Programa.objects.filter(pk=self.pk).first()
+            texto_anterior = old.text
+            super(Programa, self).save(*args, **kwargs)
+            # Verifica se o texto foi alterado para gerar um novo áudio
+            if texto_anterior != self.text:
+                self.tts()
 
     def __str__(self):
         return self.nome

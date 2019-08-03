@@ -6,7 +6,7 @@ def index(request):
     template_name = 'programas_index.html'
     form = SelectPrograma(request.POST or None)
     # Inicializa com todos os programas
-    context = {"Programas": Programa.objects.all()}
+    context = {"Programas": Programa.objects.order_by('nome')}
     # Se o forms for válido
     if form.is_valid():
         # Coleta a opção
