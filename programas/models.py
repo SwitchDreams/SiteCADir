@@ -48,11 +48,9 @@ class Programa(models.Model):
     def save(self, *args, **kwargs):
         # Se não for a primeira vez
         if not self.pk:
-            print('PASSOU NA PRIMA')
             super(Programa, self).save(*args, **kwargs)
             self.tts()
         else:
-            print('PASSOU NA SEGUNDA')
             old = Programa.objects.filter(pk=self.pk).first()
             texto_anterior = old.text
             super(Programa, self).save(*args, **kwargs)
