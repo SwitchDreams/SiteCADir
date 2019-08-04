@@ -1,7 +1,7 @@
 from django.db import models
 from gtts import gTTS
 import bleach
-
+from django.conf import settings
 
 # Create your models here.
 
@@ -43,7 +43,7 @@ class Programa(models.Model):
 
         # Text to speech
         tts = gTTS(text_clean, lang='pt-br')
-        tts.save('media/audio/programas/' + str(self.id) + '.mp3')
+        tts.save( settings.MEDIA_ROOT + 'audio/programas/' + str(self.id) + '.mp3')
 
     def save(self, *args, **kwargs):
         # Se não for a primeira vez

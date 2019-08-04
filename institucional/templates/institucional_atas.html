@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    <div class="container padding">
+        <div class="jumbotron">
+            <h1 class="text-center">Atas de reunião</h1>
+            <div class="list-group">
+                {% if Atas %}
+                    {% for ata in Atas %}
+                        <a href="{% get_media_prefix %}{{ ata.file }}" target="_blank"
+                           class="list-group-item list-group-item-action">
+                            <span class="text-primary"> {{ ata.nome }} </span>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <h2 class="text-center text-warning"> Nenhuma ata adicionada</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

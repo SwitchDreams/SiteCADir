@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    <div class="container padding">
+        <div class="jumbotron">
+            <h1 class="text-center"> Prestação de Contas</h1>
+            <div class="list-group">
+                {% if Contas %}
+                    {% for conta in Contas %}
+                        <a href="{% get_media_prefix %}{{ conta.file }}" target="_blank"
+                           class="list-group-item list-group-item-action">
+                            <span class="text-primary"> {{ conta.nome }} </span>
+                        </a>
+
+                    {% endfor %}
+                {% else %}
+                    <h2 class="text-center text-warning"> Nenhuma Prestação de Contas adicionada</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
