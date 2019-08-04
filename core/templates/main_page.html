@@ -104,7 +104,7 @@
     </div>
 
     <!-- Programas do direito -->
-    <div class="">
+    <div>
         <section id="responsive">
             <div class="container-fluid">
                 <div class="card-deck">
@@ -140,62 +140,6 @@
         </div>
     </div>
 
-    <!-- Slider Eventos-->
-    <!-- <div class="container-fluid">
-        <div id="shrink">
-            <div id="carouselEventos" data-interval="3000" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselEventos" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselEventos" data-slide-to="1"></li>
-                    <li data-target="#carouselEventos" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-
-                    {% for evento in Eventos %}
-                        <div class="carousel-item {% if forloop.first %} active {% endif %}">
-
-                            <img src="{% get_media_prefix %}{{ evento.show_img }}"
-                                 class="img-fluid d-block high-brightness">
-
-                            <a class="nounderline" href="{% url 'eventos:show' pk=evento.id %}">
-                                <div class="carousel-caption">
-                                    <h3>{{ evento.title }}</h3>
-                                    <p>{{ evento.desc | truncatewords:8 }}</p>
-                                    <div>
-                                        {% if evento.start_day == evento.end_day %}
-                                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} <br>
-                                        {% else %}
-                                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} -
-                                            {{ evento.end_day }}<br>
-                                        {% endif %}
-                                        {% if evento.isAllDay %}
-                                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
-                                        {% else %}
-                                            <i class="far fa-clock"></i> {{ evento.start }} - {{ evento.end }}
-                                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
-                                        {% endif %}
-                                    </div>
-                            </a>
-                        </div>
-                        </div>
-                    {% endfor %}
-
-                <a href="#carouselEventos" class="carousel-control-prev" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                    <span class="sr-only">prev</span>
-                </a>
-                <a href="#carouselEventos" class="carousel-control-next" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                    <span class="sr-only">next</span>
-                </a>
-            </div>
-        </div>
-        <div>
-            <div class="text-center ver-mais">
-                <a class="btn btn-primary" href="{% url 'eventos:eventos_index' %}">Ver Mais Eventos</a>
-            </div>
-        </div>
-    </div> -->
     <!-- Disposição alternativa dos eventos -->
     <div class="container eventos">
         <div class="row">
