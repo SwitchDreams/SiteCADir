@@ -1,7 +1,7 @@
 from django.db import models
 import bleach
 from gtts import gTTS
-
+from django.conf import settings
 
 # Create your models here.
 class Evento(models.Model):
@@ -36,7 +36,7 @@ class Evento(models.Model):
 
         # Text to speech
         tts = gTTS(evento_text, lang='pt-br')
-        tts.save('media/audio/eventos/' + str(self.id) + '.mp3')
+        tts.save(settings.MEDIA_ROOT + 'audio/eventos/' + str(self.id) + '.mp3')
 
     def __str__(self):
         return self.title
