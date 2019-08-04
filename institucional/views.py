@@ -10,8 +10,7 @@ from django.core.paginator import Paginator
 def index(request):
     template_name = 'institucional_index.html'
     context = {
-        "Postagens": Postagem.objects.order_by('-created_at')[:5],
-        "PrestacaoContas": PrestacaoDeContas.objects.all(),
+        "Postagens": Postagem.objects.order_by('-created_at')[:3],
         "Hoje": timezone.now()
     }
     return render(request, template_name, context)

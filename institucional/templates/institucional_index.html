@@ -52,17 +52,9 @@
                     confiança na gestão eleita, faz-se expresso o dever de prestação de contas e de manutenção da
                     transparência.</p>
 
-                {% if not PrestacaoContas %}
-                    <p> Ainda não foi adicionada nenhuma prestação de contas</p>
-                {% else %}
-                    {% for prestacao in PrestacaoContas %}
-                        <a href="{% get_media_prefix %}{{ prestacao.file }}" target="_blank"> {{ prestacao.nome }}</a>
-                    {% endfor %}
-                {% endif %}
-
                 <div class="text-center ver-mais">
-                    <a class="btn btn-primary" href="{% url 'institucional:institucional_contas' %}">Ver todas as
-                        prestações</a>
+                    <a class="btn btn-primary" href="{% url 'institucional:institucional_contas' %}">Ver
+                        Prestações de Contas</a>
                 </div>
             </div>
 
