@@ -34,6 +34,19 @@ class PrestacaoDeContas(models.Model):
         verbose_name_plural = "Prestações de Conta"
         verbose_name = "Prestação de conta"
 
+# Model relacionada as prestações de conta
+class Atas(models.Model):
+    nome = models.CharField('Nome', max_length=60, help_text='Nome que aparecerá no site(Institucional)')
+    # File para dowload
+    file = models.FileField('Arquivo', upload_to='atas_pdf')
+
+    def __str__(self):
+        return self.nome
+
+    class Meta:
+        verbose_name_plural = "Atas"
+        verbose_name = "Ata"
+
 # Model relacionada ao Texto do histórico do CADir
 class TextoHistorico(models.Model):
     texto = models.TextField('Texto', help_text='Texto no qual se encontra no ver mais do histórico do CADir')

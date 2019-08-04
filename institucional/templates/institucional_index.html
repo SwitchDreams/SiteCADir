@@ -59,6 +59,11 @@
                         <a href="{% get_media_prefix %}{{ prestacao.file }}" target="_blank"> {{ prestacao.nome }}</a>
                     {% endfor %}
                 {% endif %}
+
+                <div class="text-center ver-mais">
+                    <a class="btn btn-primary" href="{% url 'institucional:institucional_contas' %}">Ver todas as
+                        prestações</a>
+                </div>
             </div>
 
             <div class="py-3">
@@ -71,13 +76,23 @@
             </div>
 
             <div class="py-3">
-                <h2> Acesso ao drive das atas </h2>
-                <a href="#" target="_blank"> Link para o drive </a>
+                <h2> Atas </h2>
+                <p> Aqui é possível acessar as atas das reuniões do conselho. Uma maneira mais fácil de saber o que está
+                    acontecendo nas reuniões</p>
+                <div class="text-center ver-mais">
+                    <a class="btn btn-primary" href="{% url 'institucional:institucional_atas' %}"> Ver atas</a>
+                </div>
             </div>
 
             <div class="py-3">
                 <h2> Estatuto </h2>
-                <a href="#" target="_blank"> Estatuto </a>
+                <br>
+                <div class="list-group">
+                    <a href="#" target="_blank"
+                       class="list-group-item list-group-item-action">
+                        <span class="text-primary"> Estatuto pdf </span>
+                    </a>
+                </div>
             </div>
 
         </div>
