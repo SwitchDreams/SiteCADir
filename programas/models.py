@@ -1,4 +1,7 @@
 from django.db import models
+from gtts import gTTS
+import bleach
+
 
 # Create your models here.
 
@@ -29,6 +32,32 @@ class Programa(models.Model):
     instagram = models.URLField(blank=True)
     site = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
+
+    def tts(self):
+        # Clean text
+        text_clean = bleach.clean(self.text, tags=[],
+                                  attributes={},
+                                  styles=[],
+                                  strip=True)
+        text_clean = text_clean.replace('&nbsp;', '')
+
+        # Text to speech
+        tts = gTTS(text_clean, lang='pt-br')
+        tts.save('media/audio/programas/' + str(self.id) + '.mp3')
+
+    def save(self, *args, **kwargs):
+        # Se não for a primeira vez
+        if not self.pk:
+            super(Programa, self).save(*args, **kwargs)
+            self.tts()
+        else:
+            old = Programa.objects.filter(pk=self.pk).first()
+            texto_anterior = old.text
+            super(Programa, self).save(*args, **kwargs)
+            # Verifica se o texto foi alterado para gerar um novo áudio
+            if texto_anterior != self.text:
+                self.tts()
+
     def __str__(self):
         return self.nome
 
