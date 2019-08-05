@@ -15,6 +15,10 @@
     outline: 1px red solid !important;
     visibility: visible !important
 } */
+li {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+}
 
 p {
     font-family: 'Roboto Condensed', sans-serif;
