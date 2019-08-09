@@ -5,3 +5,33 @@
 .guias .card-title {
     color: var(--cadir-blue);
 }
+
+/* =========== Utilitários ================== */
+.underline {
+    text-decoration: underline;
+}
+
+.paragraph {
+    padding: 10px 0;
+}
+
+.paragraph h4 {
+    font-weight: bold;
+}
+
+.paragraph li {
+    padding: 5px 0;
+}
+
+.paragraph a {
+    text-decoration: none;
+    color: var(--cadir-blue);
+}
+
+.grid-paragraph {
+    padding: 20px 0;
+}
+
+#color-cadir {
+    color: var(--cadir-blue);
+}
