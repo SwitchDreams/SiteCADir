@@ -2,16 +2,16 @@
 
 {% load static %}
 {% block content %}
-    
 
-<div class="container padding">
-    <div class="jumbotron guias">
-        <h1 class="text-center">Guias CADir UnB</h1>
-        <p class="text-justify"> {% lorem %}</p>
 
-        <!-- Cartões para os guias estáticos -->
-        
-        <div class="card-deck text-center">
+    <div class="container padding">
+        <div class="jumbotron guias">
+            <h1 class="text-center">Guias CADir UnB</h1>
+            <p class="text-justify"> {% lorem %}</p>
+
+            <!-- Cartões para os guias estáticos -->
+
+            <div class="card-deck text-center">
 
                 <div class="card mb-3" style="max-width: 18rem; border-color: #001652 !important;">
                     <div class="card-body text-success">
@@ -19,33 +19,41 @@
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 30 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Quick sample text to create the card title and make up the body of the
+                            card's content.</p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
-                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:manual_do_calouro' %}">Ler Guia</a>
+                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:manual_do_calouro' %}">Ler
+                            Guia</a>
                     </div>
                 </div>
 
                 <div class="card mb-3" style="max-width: 18rem; border-color: #001652 !important;">
                     <div class="card-body text-success">
-                        <h5 class="card-title">Fluxo Esquematizado</h5>
+                        <h5 class="card-title"> Crédito, fluxo e menção </h5>
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 30 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Esqueceu quantos créditos precisa para se formar? Esqueceu o período máximo
+                            e mínimo de permanência no curso? Esqueceu o fluxo? Quer conhecer a fórmula que calcula o
+                            IRA? E está com preguiça de tirar essas dúvidas no MW? Esse guia foi feito para você! </p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
                         <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:fluxo' %}">Ler Guia</a>
                     </div>
                 </div>
-                
+
                 <div class="card mb-3" style="max-width: 18rem; border-color: #001652 !important;">
                     <div class="card-body text-success">
                         <h5 class="card-title">Monitoria</h5>
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 5 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Sabe aquela matéria que você se apaixonou? Gostou da didática do professor
+                            e quer ajudá-lo com algumas tarefas? Está querendo corrigir resenhas, fichamentos, fazer
+                            chamada, ou auxiliar os professores? Bom, aproveite esse guia para retirar as suas dúvidas.
+                            Fique atento aos prazos para se inscrever na monitoria e não esqueça de preencher o
+                            formulário da coordenação! </p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
                         <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:monitoria' %}">Ler Guia</a>
@@ -58,16 +66,19 @@
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 30 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Utilize esse guia para entender um pouco mais sobre o Matrícula Web, sobre
+                            os procedimentos da matrícula, do ajuste… Não fique mais perdido antes do semestre começar!
+                            Leia essas dicas e atente-se aos prazos que são fornecidos no Calendário Universitário de
+                            Graduação. </p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
                         <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:matricula_web' %}">Ler Guia</a>
                     </div>
                 </div>
 
-        </div>
+            </div>
 
-        <div class="card-deck text-center">
+            <div class="card-deck text-center">
 
                 <div class="card mb-3" style="max-width: 18rem; border-color: #001652 !important;">
                     <div class="card-body text-success">
@@ -75,10 +86,12 @@
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 7 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Quick sample text to create the card title and make up the body of the
+                            card's content.</p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
-                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:assistencia_estudantil' %}">Ler Guia</a>
+                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:assistencia_estudantil' %}">Ler
+                            Guia</a>
                     </div>
                 </div>
 
@@ -88,20 +101,24 @@
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 30 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Quick sample text to create the card title and make up the body of the
+                            card's content.</p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
                         <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:transporte' %}">Ler Guia</a>
                     </div>
                 </div>
-                
+
                 <div class="card mb-3" style="max-width: 18rem; border-color: #001652 !important;">
                     <div class="card-body text-success">
                         <h5 class="card-title">Aluno PCNE</h5>
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 30 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">A FD quer receber você, estudante com deficiência, da melhor forma
+                            possível. Por isso, preparamos um guia com informações preciosas que nem sempre te contam.
+                            Nós estamos aqui para te ajudar a reivindicar pelos seus direitos, queremos uma UnB
+                            inclusiva e acessível para todos a começar pela informação! </p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
                         <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:pcne' %}">Ler Guia</a>
@@ -114,16 +131,17 @@
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 30 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Quick sample text to create the card title and make up the body of the
+                            card's content.</p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
                         <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:transferencia' %}">Ler Guia</a>
                     </div>
                 </div>
-                
-        </div>
 
-        <div class="card-deck text-center">
+            </div>
+
+            <div class="card-deck text-center">
 
                 <div class="card mb-3" style="max-width: 18rem; border-color: #001652 !important;">
                     <div class="card-body text-success">
@@ -131,10 +149,12 @@
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 30 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                        <p class="card-text">Quick sample text to create the card title and make up the body of the
+                            card's content.</p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
-                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:aluno_estrangeiro' %}">Ler Guia</a>
+                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:aluno_estrangeiro' %}">Ler
+                            Guia</a>
                     </div>
                 </div>
 
@@ -144,36 +164,38 @@
                         <small style="padding-bottom: 10px;" class="text-muted cat">
                             <i class="far fa-clock text-info"></i> 3 minutos
                         </small>
-                        <p class="card-text">Quick sample text to create the c">ard title and make up the body of the card's content.</p>
+                        <p class="card-text">Você sabe quais os principais prédios perto da FD? Aproveite esse guia para
+                            conhecer parte do nosso país UnB e de quebra apreciar fotos muito bonitas! Quem sabe esse
+                            guia não te inspira a explorar a arquitetura da nossa Universidade? Ou a se perder pelo
+                            campus do ilustre Darcy Ribeiro?</p>
                     </div>
                     <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
-                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:predios_unb'%}">Ler Guia</a>
+                        <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:predios_unb' %}">Ler Guia</a>
                     </div>
                 </div>
-                
-        </div>
 
-        
+            </div>
 
-        <h2 class="text-center">Gostou? Encontre mais guias abaixo!</h2>
-        <br>
-        <!-- Guias que serão links externos -->
-        <div class="list-group">
-            {% for guias in Guias %}
-                <!-- Redireciona para o dowload do arquivo ou o link ou nada -->
-                <a href="{% if guias.file %} {% get_media_prefix %}{{ guias.file }}
+
+            <h2 class="text-center">Gostou? Encontre mais guias abaixo!</h2>
+            <br>
+            <!-- Guias que serão links externos -->
+            <div class="list-group">
+                {% for guias in Guias %}
+                    <!-- Redireciona para o dowload do arquivo ou o link ou nada -->
+                    <a href="{% if guias.file %} {% get_media_prefix %}{{ guias.file }}
                             {% elif guias.link %} {{ guias.link }}
                             {% else %} # {% endif %}" target="_blank"
-                    class="list-group-item list-group-item-action">
-                    {% if guias.file or guias.link %}
-                        <span class="text-primary"> {{ guias.nome }} </span>
-                    {% else %}
-                        <span class="text-muted"> {{ guias.nome }} </span>
-                    {% endif %}
-                </a>
-            {% endfor %}
+                       class="list-group-item list-group-item-action">
+                        {% if guias.file or guias.link %}
+                            <span class="text-primary"> {{ guias.nome }} </span>
+                        {% else %}
+                            <span class="text-muted"> {{ guias.nome }} </span>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
