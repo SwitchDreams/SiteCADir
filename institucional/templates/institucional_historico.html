@@ -6,16 +6,21 @@
 
 <div class="container padding">
     <div class="jumbotron">
+        <h1 class="text-center">Histórico CADir UnB</h1>
+        <p class="text-center my-5">Manter uma memória institucional é sempre importante. Confira abaixo as gestões que já administraram o CADir!</p>
         <div class="timeline">
             {% for logo in logos%}
                 <div class="container-tl {%if forloop.counter0|divisibleby:2 %} left {% else %} right {% endif %}">
                     <div class="content-tl">
-                        <h2> {{ logo.nome }}</h2>
+                        <h2 class="text-center"> {{ logo.nome }}</h2>
                         <h3 class="text-center"><span class="small text-gray"><i class="far fa-calendar-alt"></i>  {{logo.ano_inicial}} - {{logo.ano_final}} </span><h3>
                         <img class="img-fluid" src="../../media/{{logo.logo}}" alt="">
                     </div>
                 </div>
             {% endfor %}
+        </div>
+        <div class="padding">
+            {{ historico.texto|safe }}
         </div>
     </div>
 </div>
