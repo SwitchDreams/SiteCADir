@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+    <div class="container padding">
+        <div class="jumbotron guias">
+            <h1 class="text-center">Guias CADir UnB</h1>
+            <p class="text-justify"> {% lorem %}</p>
+
+            {% for guia in Guias %}
+                {% if forloop.counter0|divisibleby:3 %}
+                    <div class="card-deck text-center justify-content-center">{% endif %}
+
+
+            <div class="card mb-3" style="max-width: 18rem; border-color: #001652 !important;">
+                <div class="card-body text-success">
+                    <h5 class="card-title">{{ guia.nome }}</h5>
+                    <small style="padding-bottom: 10px;" class="text-muted cat">
+                        <i class="far fa-clock text-info"></i> {{ guia.duracao }}minutos
+                    </small>
+                    <p class="card-text">{{ guia.desc }}</p>
+                </div>
+                <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
+                    <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:guias_show' pk=guia.id %} ">Ler
+                        Guia</a>
+                </div>
+                <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
+                    <a style="color: #001652; font-size: .9rem;" href="{% get_media_prefix %}{{ guia.file }}">Baixar
+                        Guia</a>
+                </div>
+            </div>
+            {% if forloop.counter|add:3|divisibleby:3 %}</div>{% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
