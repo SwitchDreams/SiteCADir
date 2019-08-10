@@ -43,6 +43,9 @@
     width: 40%;
   }
 
+#the-canvas {
+    width: 100%;
+}
 /* =========== Prédios ================== */
 
 .img_predios {
