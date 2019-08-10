@@ -67,8 +67,9 @@ class TextoHistorico(models.Model):
 
 # Logos das gestões anteriores
 class Logos(models.Model):
-    nome = models.TextField('Nome', max_length=50, help_text='Nome da gestão correspondente')
-    periodo = models.TextField('Período da Gestão', max_length=12, help_text='Período pelo qual a gestão ficou responsável pelo CADir (ex: 1998 - 1999')
+    nome = models.CharField('Nome', max_length=50, help_text='Nome da gestão correspondente')
+    ano_inicial = models.CharField('Ano de início', max_length=4, help_text='Ano em que a gestão iniciou o mandato')
+    ano_final = models.CharField('Ano de término', max_length=4, help_text='Ano em que a gestão encerrou o mandato')
     logo = models.ImageField('Logo', help_text='Logo da gestão correspondente')
 
     def __str__(self):

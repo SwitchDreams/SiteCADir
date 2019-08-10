@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Postagem, TextoHistorico, PrestacaoDeContas, Atas
+from .models import Postagem, TextoHistorico, PrestacaoDeContas, Atas, Logos
 from datetime import datetime
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -42,6 +42,7 @@ def historico(request):
     template_name = 'institucional_historico.html'
     context = {
         "historico" : TextoHistorico.objects.all().get(),
+        "logos" : Logos.objects.all()
     }
     return render(request, template_name, context)
 
