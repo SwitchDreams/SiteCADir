@@ -4,7 +4,202 @@
 {% block content %}
     <div class="container padding">
         <div class="jumbotron">
-            <h1 class="text-center"> Futuro guia de matrícula web </h1>
+            <h1 class="text-center"> Guia do Matrícula Web </h1>
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center">O QUE É O MW?</h4>
+                <p> Matrícula Web (MW) é uma plataforma online da UnB voltada aos estudantes, para que estes efetuem
+                    suas matrículas nas disciplinas.</p>
+            </div>
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center">COMO FAZER O LOGIN?</h4>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="grid-paragraph ">
+                            <p> Para realizar o login no MW basta a
+                                matrícula e senha, disponibilizada no dia
+                                do registro</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <img src="{% get_media_prefix %}guias_img/mw/login.jpg"
+                             alt="Imagem login matricula web">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center">AO ACESSAR...</h4>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="text-center">
+                            <img src="{% get_media_prefix %}guias_img/mw/saldoRU.jpg"
+                                 alt="Imagem login matricula web">
+                        </div>
+                        <div class="text-center">
+                            <img src="{% get_media_prefix %}guias_img/mw/menu.jpg"
+                                 alt="Imagem login matricula web">
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="grid-paragraph">
+                            <p> Com o acesso é possível visualizar o saldo no Restaurante Universitário
+                                (RU), a grade horária que o estudante irá cursar naquele semestre, o
+                                histórico escolar com as respectivas menções das disciplinas e o quadro
+                                resumo, que contém diversas informações pertinentes ao andamento no
+                                curso, como número de créditos (obtidos / a se obter) e seu IRA (Índice
+                                de Rendimento Acadêmico).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center"> NOS DIAS DA MATRÍCULA: </h4>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="grid-paragraph">
+                            <p> No dia de início de matrícula, o estudante deverá
+                                realizar o login e verificar quais matérias o sistema
+                                ofertou. Principalmente no que tange aos calouros, é
+                                muito importante confirmar TODAS as matérias.</p>
+                            <p> O sistema oferta as matérias adequadas ao período no
+                                curso, isto é, todas as matérias que o estudante deve
+                                obrigatoriamente cursar constarão no MW como pré-
+                                matriculado. Deve-se confirmar tais matérias.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="grid-paragraph">
+                            <div class="row">
+                                <img src="{% get_media_prefix %}guias_img/mw/etapa.jpg"
+                                     alt="Imagem da etapa">
+                                <img class="pl-5" height="70px" src="{% get_media_prefix %}guias_img/mw/errado.jpg"
+                                     alt="Imagem de errado">
+                            </div>
+                            <div class="row pt-1">
+                                <img src="{% get_media_prefix %}guias_img/mw/confirmacao.jpg"
+                                     alt="Imagem de cofnrimação">
+                                <img class="pl-5" height="70px" src="{% get_media_prefix %}guias_img/mw/certo.jpg"
+                                     alt="Imagem de correto">
+                            </div>
+                            <div class="row pt-1">
+                                <img src="{% get_media_prefix %}guias_img/mw/atencao.jpg"
+                                     alt="Atenção">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center"> RETIRAR MATÉRIA: </h4>
+                <p> Se o estudante optar por retirar alguma disciplina, deve pensar bem antes, já que isso ocasionará a
+                    saída do fluxo,isto é, o andamento do curso pré-estabelecido.</p>
+
+                <div class="text-center">
+                    <img src="{% get_media_prefix %}guias_img/mw/retirar_1.jpg"
+                         alt="Imagem de retirada 1">
+                </div>
+                <div class="text-center">
+                    <img src="{% get_media_prefix %}guias_img/mw/retirar_2.jpg"
+                         alt="Imagem de retirada 2">
+                </div>
+
+
+            </div>
+
+            <div class="paragraph pt-5">
+                <h4 class="font-weight-bold text-center"> CALENDÁRIO UNIVERSITÁRIO DE GRADUAÇÃO </h4>
+                <div class="text-center">
+                    <img width="200px" height="200px" src="{% get_media_prefix %}guias_img/mw/exclamacao.jpg"
+                         alt="Imagem exclamação">
+                </div>
+                <p>É importantíssimo acompanhar o CALENDÁRIO UNIVERSITÁRIO DE GRADUAÇÃO que possui entre outras
+                    datas importantes, o calendário de matrícula. O qual também será divulgado amplamente nos meios de
+                    comunicação da UnB e pela própria Faculdade de Direito.</p>
+            </div>
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center"> ETAPAS DO MW RESUMIDAS: </h4>
+                <ol>
+                    <li>Oferta Individual</li>
+                    <li>Período de confirmação de matrícula: o estudante, nessa fase, deverá
+                        confirmar (C) ou retirar (R) as disciplinas ofertadas pelo sistema. Além
+                        disso, é possível incluir outras disciplinas na matrícula;
+                    </li>
+                    <li>Resultado da matrícula: ocorre após processamento coletivo;</li>
+                    <li>Lista de espera: caso o estudante não consiga alguma disciplina
+                        desejada, confirmará a lista de espera da disciplina;
+                    </li>
+                    <li>O MW ficará disponível, de acordo com o calendário de matrícula, para
+                        que o estudante tente matrícula em outras disciplinas que tenham
+                        vagas;
+                    </li>
+                    <li>Ajuste: a Coordenação de cada curso irá resolver (a maioria) dos casos
+                        que não foram resolvidos pelo MW.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center"> ETAPAS DO MW RESUMIDAS: </h4>
+                <p>Após o processamento e resultado da matrícula realizada no âmbito do MW, se o estudante realizou
+                    algum tipo de alteração no sistema, por exemplo, ficará a cargo de a Coordenação proceder no ajuste.
+                    Para cada
+                    caso originado pelo sistema haverá um procedimento e certas prioridades a serem adotadas. Os
+                    principais
+                    casos são aqueles de retirada de disciplina, ou quando o estudante não consegue se matricular em
+                    alguma turma
+                    desejada por falta de vagas. Tais problemáticas estão diretamente relacionadas!</p>
+                <p>Quando se retira a disciplina da grade, por exemplo, o estudante geralmente está em busca de outra
+                    turma,
+                    podendo se deparar com uma turma já completa. Nesses casos será gerada uma lista de espera, a ser
+                    processada pela Coordenação, de acordo com alguns critérios objetivos.</p>
+                <p>No período de Ajuste, a Coordenação é que tem o encargo de receber os pedidos e atendê-los,
+                    atentando-se à
+                    possibilidade do pedido. O Ajuste também é um período previamente definido pelo Calendário
+                    Acadêmico, que
+                    muda todo semestre. Por isso todos devem se atentar aos prazos estabelecidos.</p>
+                <p>Apesar de todo esse processo parecer uma grande dor de cabeça (e é), basta que no início do curso (ou
+                    durante
+                    TODO o curso, se conseguir), o estudante se mantenha no fluxo ofertado pelo sistema. Desse modo,
+                    evita ficar à
+                    mercê do período de Ajuste ou da Coordenação.</p>
+            </div>
+
+            <div class="paragraph">
+                <h4 class="font-weight-bold text-center"> ALGUMAS DÚVIDAS: </h4>
+
+                <h5 class="font-weight-bold">Calouros podem adiantar disciplinas?</h5>
+                <p>Sim, mas é um procedimento que só pode ser feito diretamente pela Coordenação. Se você é calouro e
+                    deseja
+                    começar o curso com gás total, procure a Coordenação e faça o pedido.</p>
+
+                <h5 class="font-weight-bold">Quem se matricula primeiro tem mais chances de conseguir a matéria?</h5>
+                <p>Não, a ordem de chegada não é levada em consideração</p>
+
+                <h5 class="font-weight-bold">É aconselhado retirar matérias obrigatórias durante a matrícula?</h5>
+                <p>Recomenda-se que não se retire matérias obrigatórias, mas não há nenhum problema em adiantar matérias
+                    do
+                    próximo semestre (desde que cumpridos os pré-requisitos), alguma PAD ou matérias optativas e/ou de
+                    módulo
+                    livre.</p>
+
+                <h5 class="font-weight-bold">Preciso me desesperar para fazer a matrícula?</h5>
+                <p>Não! Antigamente, o MW era o pesadelo de todos os estudantes, já que caia constantemente e tornava o
+                    período
+                    de matrícula uma verdadeira luta. Hoje em dia é um sistema estável, então não é necessário nenhum
+                    desespero
+                    ou uma vigília apertando o F5 para efetuar sua matrícula. Porém, atente-se aos prazos!</p>
+            </div>
+
         </div>
     </div>
 {% endblock %}
