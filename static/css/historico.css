@@ -47,7 +47,7 @@ li.timeline-item::before {
 } */
 
 /* ================================ opção 2 ============================== */
-.timeline {
+/* .timeline {
     position: relative;
     padding:4px 0 0 0;
     margin-top:22px;
@@ -165,7 +165,7 @@ li.timeline-item::before {
     color:#808080;
 }
 /*Style for even div.line*/
-.timeline>li:nth-child(odd) .line:before {
+/* .timeline>li:nth-child(odd) .line:before {
     content: "";
     position: absolute;
     top: 60px;
@@ -174,13 +174,13 @@ li.timeline-item::before {
     width: 4px;
     height:340px;
     background-color: #3b5998;
-    -ms-transform: rotate(-44deg); /* IE 9 */
-    -webkit-transform: rotate(-44deg); /* Safari */
+    -ms-transform: rotate(-44deg); 
+    -webkit-transform: rotate(-44deg); 
     transform: rotate(-44deg);
     box-shadow: 0 0 5px #4582ec;
-}
+} */
 /*Style for odd div.line*/
-.timeline>li:nth-child(even) .line:before  {
+/* .timeline>li:nth-child(even) .line:before  {
     content: "";
     position: absolute;
     top: 60px;
@@ -189,13 +189,13 @@ li.timeline-item::before {
     width: 4px;
     height:340px;
     background-color: #3b5998;
-    -ms-transform: rotate(44deg); /* IE 9 */
-    -webkit-transform: rotate(44deg); /* Safari */
+    -ms-transform: rotate(44deg); 
+    -webkit-transform: rotate(44deg); 
     transform: rotate(44deg);
     box-shadow: 0 0 5px #4582ec;
-}
+} */
 /* Medium Devices, .visible-md-* */
-@media (min-width: 992px) and (max-width: 1199px) {
+/* @media (min-width: 992px) and (max-width: 1199px) {
   .timeline > li:nth-child(even) {
     margin-bottom: 0px;
     min-height: 0px;
@@ -227,9 +227,9 @@ li.timeline-item::before {
   .timeline > li .line {
     display: none;
   }
-}
+} */
 /* Small Devices, Tablets */
-@media (min-width: 768px) and (max-width: 991px) {
+/* @media (min-width: 768px) and (max-width: 991px) {
   .timeline > li:nth-child(even) {
     margin-bottom: 0px;
     min-height: 0px;
@@ -261,9 +261,9 @@ li.timeline-item::before {
   .timeline > li .line {
     display: none;
   }
-}
+} */
 /* Custom, iPhone Retina */
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .timeline > li:nth-child(even) {
     margin-bottom: 0px;
     min-height: 0px;
@@ -300,4 +300,6 @@ li.timeline-item::before {
   .timeline > li .line {
     display: none;
   }
-}
+} */
+
+/* ================== terceira opcao -================== */
