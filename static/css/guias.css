@@ -42,3 +42,10 @@
     margin-right: auto;
     width: 40%;
   }
+
+/* =========== Prédios ================== */
+
+.img_predios {
+    height: 300px;
+    width: 100%;
+}
