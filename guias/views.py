@@ -3,7 +3,7 @@ from .models import Guia
 # Create your views here.
 
 def index(request):
-    template_name = 'guias_index.html'
+    template_name = 'guias_index_dinamico.html'
     context = {
         "Guias": Guia.objects.order_by("nome")
     }
