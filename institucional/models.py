@@ -64,3 +64,18 @@ class TextoHistorico(models.Model):
     class Meta:
         verbose_name_plural = "Texto do histórico do CADir"
         verbose_name = "Texto do histórico do CADir"
+
+# Logos das gestões anteriores
+class Logos(models.Model):
+    nome = models.TextField('Nome', max_length=50, help_text='Nome da gestão correspondente')
+    periodo = models.TextField('Período da Gestão', max_length=12, help_text='Período pelo qual a gestão ficou responsável pelo CADir (ex: 1998 - 1999')
+    logo = models.ImageField('Logo', help_text='Logo da gestão correspondente')
+
+    def __str__(self):
+        return self.nome
+
+    class Meta:
+        verbose_name_plural = "Logos"
+        verbose_name = "Logo"
+
+    
