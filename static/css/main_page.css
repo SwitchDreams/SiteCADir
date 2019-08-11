@@ -54,20 +54,20 @@ h1, h2, h3, h4, h5, h6 {
 
 #fixed {
     background: url('../../media/FD_4.jpeg') no-repeat center center;
-    display: table;
+    /* display: table; */
     height: 60%;
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    /* background-size: cover; */
+    background-size: cover;
 }
 
 #fixed2 {
     background: url('../../media/FD_6.JPG') no-repeat center center;
-    display: table;
+    /* display: table; */
     height: 60%;
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    /* background-size: cover; */
+    background-size: cover;
 }
 
 .ver-mais {
