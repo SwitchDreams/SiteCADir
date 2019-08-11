@@ -1,9 +1,7 @@
 /* FONTES */
 /* Cardo e Oswald */
 @import url('https://fonts.googleapis.com/css?family=Cardo|Oswald&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed&display=swap');
-
-:root {
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed&display=swap');:root {
     --cadir-blue-faded: #3c5a8c;
     --cadir-blue: #001652;
     --bg-white: #f3f3f3;
@@ -25,7 +23,12 @@ p {
     color: black;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Lato', sans-serif;
 }
 
@@ -45,11 +48,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .padding {
-    padding: 80px 0px;
+    padding: 80px 0;
 }
 
 .padding .guias img {
     width: 100%;
+}
+
+.fixed {
+    height: 60%;
+    width: 100%;
+}
+
+.fixed img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
 }
 
 #fixed {
@@ -70,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and(max-width: 320px) {
     #fixed {
         background-attachment: scroll;
     }
@@ -80,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and(max-width: 768px) {
     #fixed {
         background-attachment: scroll;
     }
@@ -115,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-caption h1 {
     font-size: 3.8rem;
     font-weight: 700;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
 }
 
 .carousel-control-next,
@@ -134,11 +148,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .guias .socket {
-    border-top: .15rem solid var(--cadir-blue);
+    border-top: 0.15rem solid var(--cadir-blue);
 }
 
 .eventos .socket {
-    border-top: .15rem solid var(--cadir-blue);
+    border-top: 0.15rem solid var(--cadir-blue);
 }
 
 a:active {
@@ -150,14 +164,14 @@ a:active {
     text-align: justify;
 }
 
-@media (max-width: 932px) {
+@media(max-width: 932px) {
     h5 {
         font-size: 20px;
     }
 
     p.card-text {
         font-size: 14px;
-        letter-spacing: 0px;
+        letter-spacing: 0;
     }
 
     #responsive .socialicon .fa {
@@ -165,20 +179,20 @@ a:active {
     }
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
     .card-deck .card {
         flex: 0 0 45%;
         margin: 20px auto;
     }
 }
 
-@media (max-width: 691px) {
+@media(max-width: 691px) {
     #responsive {
         margin: 20px auto;
     }
 }
 
-@media (max-width: 619px) {
+@media(max-width: 619px) {
     .card-deck .card {
         width: 80%;
     }
@@ -191,7 +205,8 @@ a:active {
     color: var(--cadir-blue);
 }
 
-.eventos a, .guias a {
+.eventos a,
+.guias a {
     text-decoration: none;
 }
 
