@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fixed {
-    background: url('../../media/FD_4.jpeg') no-repeat center center;
+    background: url('../../media/FD_4.jpeg') no-repeat center center fixed;
     /* display: table; */
     height: 60%;
     /* position: relative; */
@@ -62,12 +62,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fixed2 {
-    background: url('../../media/FD_6.JPG') no-repeat center center;
+    background: url('../../media/FD_6.JPG') no-repeat center center fixed;
     /* display: table; */
     height: 60%;
     /* position: relative; */
     width: 100%;
     background-size: cover;
+}
+
+@media screen and (max-width: 320px) {
+    #fixed {
+        background-attachment: scroll;
+    }
+
+    #fixed2 {
+        background-attachment: scroll;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #fixed {
+        background-attachment: scroll;
+    }
+
+    #fixed2 {
+        background-attachment: scroll;
+    }
 }
 
 .ver-mais {
