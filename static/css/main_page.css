@@ -171,7 +171,7 @@ a:active {
     color: var(--cadir-blue);
 }
 
-.eventos a {
+.eventos a, .guias a {
     text-decoration: none;
 }
 
