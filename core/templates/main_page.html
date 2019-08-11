@@ -55,7 +55,14 @@
             <div class="text-center">
                 <h2 class="">O que é o Centro Acadêmico de Direito?</h2>
             </div>
-            <p align="justify" class="custom-paragraph">O Centro Acadêmico de Direito da Universidade de Brasília é o órgão representativo de todas/os estudantes de Direito da UnB. Trata-se de associação independente e plural, fundada em 25 de novembro de 1993 e filiada à União Nacional dos Estudantes. Seu principal objetivo é representar e defender os interesses discentes. Ao desenvolver atividades acadêmicas, sociais, políticas, jurídicas, culturais e recreativas, visa enriquecer a formação das/os estudantes de Direito. Além disso, objetiva fortalecer e mobilizar as entidades estudantis. Sobretudo, traduz-se em instrumento de luta por uma Universidade pública, de qualidade, e pela defesa de direitos, da igualdade e da justiça social.</p>
+            <p align="justify" class="custom-paragraph">O Centro Acadêmico de Direito da Universidade de Brasília é o
+                órgão representativo de todas/os estudantes de Direito da UnB. Trata-se de associação independente e
+                plural, fundada em 25 de novembro de 1993 e filiada à União Nacional dos Estudantes. Seu principal
+                objetivo é representar e defender os interesses discentes. Ao desenvolver atividades acadêmicas,
+                sociais, políticas, jurídicas, culturais e recreativas, visa enriquecer a formação das/os estudantes de
+                Direito. Além disso, objetiva fortalecer e mobilizar as entidades estudantis. Sobretudo, traduz-se em
+                instrumento de luta por uma Universidade pública, de qualidade, e pela defesa de direitos, da igualdade
+                e da justiça social.</p>
             <div class="text-center">
                 <a class="btn btn-primary" href="{% url 'institucional:institucional_index' %}">Ler Mais</a>
             </div>
@@ -67,12 +74,14 @@
         <div class="container guias">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 py-2">
-                    <h4>Como usar o Matrícula Web</h4>
-                    <hr class="socket">
-                    <p align="justify">{% lorem 35 w %}</p>
+                    <a href="{% url 'guias:guias_show' pk=8 %}">
+                        <h4>Como usar o Matrícula Web</h4>
+                        <hr class="socket">
+                        <p align="justify">{% lorem 35 w %}</p>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 py-2">
-                    <img class="img-responsive" src="../../media/MW.png">
+                    <img class="img-responsive" src="{% get_media_prefix %}MW.png">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 py-2">
                     <h4>Manual do Calouro</h4>
@@ -80,7 +89,7 @@
                     <p align="justify">{% lorem 35 w %}</p>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 py-2">
-                    <img src="../../media/manual.jpeg">
+                    <img src="{% get_media_prefix %}manual.jpeg">
                 </div>
             </div>
             <br>
@@ -99,7 +108,11 @@
             <div class="text-center">
                 <h2 class="">Programas da Faculdade de Direito - UnB</h2>
             </div>
-            <p align="justify" class="custom-paragraph">O corpo discente da Faculdade de Direito é bastante ativo, há uma diversidade de programas de iniciativa estudantil, estes permitem que os alunos se engajem em atividades de extensão, um dos componentes do tripé que constitui a proposta inicial pensada para a Universidade de Brasília, empresa júnior e atlética. Essas iniciativas expandem os horizontes e enriquecem a vivência acadêmica.</p>
+            <p align="justify" class="custom-paragraph">O corpo discente da Faculdade de Direito é bastante ativo, há
+                uma diversidade de programas de iniciativa estudantil, estes permitem que os alunos se engajem em
+                atividades de extensão, um dos componentes do tripé que constitui a proposta inicial pensada para a
+                Universidade de Brasília, empresa júnior e atlética. Essas iniciativas expandem os horizontes e
+                enriquecem a vivência acadêmica.</p>
         </div>
     </div>
 
@@ -136,7 +149,12 @@
             <div class="text-center">
                 <h2 class=""> Eventos do Direito UnB</h2>
             </div>
-            <p align="justify" class="custom-paragraph">Sabemos que a formação de um bom jurista vai muito além da sala de aula. Por mais importantes que sejam os conteúdos ministrados, atividades extracurriculares são essenciais não só na formação acadêmica, mas de um cidadão. Tendo isso em mente, o Centro Acadêmico de Direito criou um espaço para que os estudantes possam se inteirar dos diversos eventos relacionados ao Direito que ocorrem semestralmente na Universidade. Então marque na sua agenda e fique por dentro das diversas atividades que ocorrem pelo campus!</p>   
+            <p align="justify" class="custom-paragraph">Sabemos que a formação de um bom jurista vai muito além da sala
+                de aula. Por mais importantes que sejam os conteúdos ministrados, atividades extracurriculares são
+                essenciais não só na formação acadêmica, mas de um cidadão. Tendo isso em mente, o Centro Acadêmico de
+                Direito criou um espaço para que os estudantes possam se inteirar dos diversos eventos relacionados ao
+                Direito que ocorrem semestralmente na Universidade. Então marque na sua agenda e fique por dentro das
+                diversas atividades que ocorrem pelo campus!</p>
         </div>
     </div>
 
@@ -146,22 +164,22 @@
             {% for evento in Eventos %}
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 py-2">
                     <a href="{% url 'eventos:show' pk=evento.id %}"><h4>{{ evento.title }}</h4><a>
-                    <hr class="socket">
-                    <p allign="justify">{{ evento.desc | truncatewords:20 }}</p>
-                    <div>
-                        {% if evento.start_day == evento.end_day %}
-                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} <br>
-                        {% else %}
-                            <i class="fas fa-calendar-week"></i> {{ evento.start_day }} -
-                            {{ evento.end_day }}<br>
-                        {% endif %}
-                        {% if evento.isAllDay %}
-                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
-                        {% else %}
-                            <i class="far fa-clock"></i> {{ evento.start }} - {{ evento.end }}
-                            <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
-                        {% endif %}
-                    </div>
+                        <hr class="socket">
+                        <p allign="justify">{{ evento.desc | truncatewords:20 }}</p>
+                        <div>
+                            {% if evento.start_day == evento.end_day %}
+                                <i class="fas fa-calendar-week"></i> {{ evento.start_day }} <br>
+                            {% else %}
+                                <i class="fas fa-calendar-week"></i> {{ evento.start_day }} -
+                                {{ evento.end_day }}<br>
+                            {% endif %}
+                            {% if evento.isAllDay %}
+                                <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
+                            {% else %}
+                                <i class="far fa-clock"></i> {{ evento.start }} - {{ evento.end }}
+                                <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
+                            {% endif %}
+                        </div>
                 </div>
             {% endfor %}
         </div>
@@ -170,5 +188,5 @@
             <a class="btn btn-primary" href="{% url 'eventos:eventos_index' %}">Mais Eventos</a>
         </div>
     </div>
-    
+
 {% endblock %}

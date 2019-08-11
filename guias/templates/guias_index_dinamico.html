@@ -7,7 +7,9 @@
     <div class="container padding">
         <div class="jumbotron guias">
             <h1 class="text-center">Guias CADir UnB</h1>
-            <p class="text-justify"> {% lorem %}</p>
+            <p class="text-justify"> Aqui podemos encontrar guias para auxiliar sua entrada na UnB. Os guias são
+                moldados semestretalmente, para melhor antender a demanda daquele semestre por informações. Têm
+                interesse por outros guias? Envie por gentileza suas sugestões na ouvidoria</p>
 
             {% for guia in Guias %}
                 {% if forloop.counter0|divisibleby:3 %}
@@ -20,7 +22,7 @@
                     <small style="padding-bottom: 10px;" class="text-muted cat">
                         <i class="far fa-clock text-info"></i> {{ guia.duracao }}minutos
                     </small>
-                    <p class="card-text">{{ guia.desc }}</p>
+                    <p class="card-text">{{ guia.desc|truncatewords:35 }}</p>
                 </div>
                 <div class="card-footer bg-transparent" style="border-color: #001652 !important;">
                     <a style="color: #001652; font-size: .9rem;" href="{% url 'guias:guias_show' pk=guia.id %} ">Ler
