@@ -38,10 +38,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 1.5rem;
 }
 
-.custom-paragraph {
-
-}
-
 /* =================================================== */
 .card {
     /* Adicionando uma largura máxima para não distorcer a imagem*/
@@ -62,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 60%;
     position: relative;
     width: 100%;
-    background-size: cover;
+    /* background-size: cover; */
 }
 
 #fixed2 {
@@ -71,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 60%;
     position: relative;
     width: 100%;
-    background-size: cover;
+    /* background-size: cover; */
 }
 
 .ver-mais {
