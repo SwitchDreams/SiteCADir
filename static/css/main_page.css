@@ -66,20 +66,16 @@ h6 {
     object-fit: cover
 }
 
-#fixed {
+/* #fixed {
     background: url('../../media/FD_4.jpeg') no-repeat center center fixed;
-    /* display: table; */
     height: 60%;
-    /* position: relative; */
     width: 100%;
     background-size: cover;
 }
 
 #fixed2 {
     background: url('../../media/FD_6.JPG') no-repeat center center fixed;
-    /* display: table; */
     height: 60%;
-    /* position: relative; */
     width: 100%;
     background-size: cover;
 }
@@ -102,7 +98,7 @@ h6 {
     #fixed2 {
         background-attachment: scroll;
     }
-}
+} */
 
 .ver-mais {
     padding: 30px 0;
