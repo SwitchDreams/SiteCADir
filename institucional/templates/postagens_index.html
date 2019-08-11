@@ -5,7 +5,9 @@
     <div class="container padding">
         <div class="jumbotron">
             <h1 class="text-center">Todas as postagens</h1>
-
+            {% if not Postagens %}
+                <h2 class="text-center text-warning"> Ainda não há postagens disponíveis </h2>
+            {% endif %}
             <div class="list-group">
                 {% for postagem in Postagens %}
                     <a href="{% url 'institucional:postagem_show' pk=postagem.nome %}"

@@ -7,25 +7,28 @@
     <style>
         canvas {
             width: content-box !important;
-            height:400px !important;
+            height: 400px !important;
         }
     </style>
 {% endblock %}
 
 {% block object-tools %}
-        <div class="container" >
-        {% lorem ipsum %}
-        {% if dataGraph%}
-        <script >
-            var getData = function(){
-                var data = {
+    <div class="container">
+        <h1> Ouvidoria</h1>
+        <p> Aqui podemos encontrar os dados da ouvidoria por categoria. Cada e-mail enviado na ouvidoria é guardada a
+            informação de envio somente do tema para realizar essa estatísca</p>
+        {% if dataGraph %}
+            <script>
+                var getData = function () {
+                    var data = {
                     {%for sla in dataGraph%}
-                    {{sla.0}} : {{sla.1}},
+                        {{sla.0}} : {{sla.1}},
                     {%endfor%}
+                }
+                    ;
+                    return data;
                 };
-                return data;
-            };
-        </script>
+            </script>
         {% else %}
             <h1> Não há dados nesse período </h1>
         {% endif %}
