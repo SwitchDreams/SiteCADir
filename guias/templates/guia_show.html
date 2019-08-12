@@ -17,8 +17,10 @@
 
                 <canvas id="the-canvas"></canvas>
             </div>
-
-
+            <h2 class="text-center"> Gostou?</h2>
+            <h3 class="text-center"><a style="color: #001652; font-size: .9rem;"
+                                       href="{% get_media_prefix %}{{ guia.file }}">Baixar
+                Guia</a></h3>
         </div>
     </div>
     <script>
@@ -122,5 +124,7 @@
             // Initial/first page rendering
             renderPage(pageNum);
         });
+
+
     </script>
 {% endblock %}
