@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Postagem, TextoHistorico, PrestacaoDeContas, Atas, Logos
+from .models import Postagem, TextoHistorico, PrestacaoDeContas, Atas, Logos, Estatuto
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -7,6 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 admin.site.register(PrestacaoDeContas)
 admin.site.register(Atas)
 admin.site.register(Logos)
+admin.site.register(Estatuto)
 
 @admin.register(Postagem)
 class PostagemAdmin(SummernoteModelAdmin):

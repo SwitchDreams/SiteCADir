@@ -80,3 +80,15 @@ class Logos(models.Model):
         verbose_name = "Logo"
 
     
+# Model Relacionado as estatutos
+class Estatuto(models.Model):
+    nome = models.CharField('Nome', max_length=60, help_text='Nome que aparecerá no site(Institucional)')
+    # File para dowload
+    file = models.FileField('Arquivo', upload_to='estato')
+
+    def __str__(self):
+        return self.nome
+
+    class Meta:
+        verbose_name_plural = "Estatutos"
+        verbose_name = "Estatuto"
