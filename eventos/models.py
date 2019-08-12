@@ -3,6 +3,7 @@ import bleach
 from gtts import gTTS
 from django.conf import settings
 
+
 # Create your models here.
 class Evento(models.Model):
     # Inforamções Principais
@@ -14,11 +15,13 @@ class Evento(models.Model):
     start_day = models.DateField('Dia em que o Evento começa')
     end_day = models.DateField('Dia em que o Evento Acaba')
     isAllDay = models.BooleanField('É o dia inteiro?')
-    start = models.TimeField('Horário de começo')
-    end = models.TimeField('Horário de término')
+    start = models.TimeField('Horário de começo', help_text='Caso o Evento seja o dia inteiro coloque qualquer horário')
+    end = models.TimeField('Horário de término', help_text='Caso o Evento seja o dia inteiro coloque qualquer horário')
 
     # Imagem para a página de informações
-    show_img = models.ImageField('show_img', default='CADir_logo.png')
+    show_img = models.ImageField('show_img', upload_to='evento_show_img', default='CADir_logo.png', blank=True)
+    more_info_img = models.ImageField('Foto com mais informações', upload_to='evento_more_info', blank=True,
+                                      help_text='Caso o evento tenha um pdf/foto com mais informações')
 
     def save(self, *args, **kwargs):
         # Save model atributes

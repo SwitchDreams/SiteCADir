@@ -3,15 +3,12 @@
 {% load static %}
 {% load bleach_tags %}
 {% block content %}
-    <br> <!-- a navbar come um pedaço da página -->
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container">
+    <div class="container padding">
         <div class="jumbotron">
             <div class="container text-center">
-                <img src="{% get_media_prefix %}{{ Evento.show_img }}" class="img-fluid rlx-bro">
+                {% if Evento.show_img %}
+                    <img src="{% get_media_prefix %}{{ Evento.show_img }}" class="img-fluid rlx-bro">
+                {% endif %}
             </div>
             <h1 class="text-center font-weight-bold"> {{ Evento.title }} </h1>
 
@@ -42,6 +39,10 @@
                             <li>Local: {{ Evento.local }}</li>
                         </ul>
 
+                        {% if Evento.more_info_img %}
+                            <h2 class="pt-3" > Mais informações?</h2>
+                            <a style="color: #001652; font-size: .9rem;" href="{% get_media_prefix %}{{ Evento.more_info_img }}">Abra aqui</a>
+                        {% endif %}
                     </div>
 
                 </div>
