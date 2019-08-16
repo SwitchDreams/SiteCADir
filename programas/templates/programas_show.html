@@ -9,15 +9,16 @@
     <br>
     <br>
 
-    <div id="programas-fixed"
-         style="background: url('{% get_media_prefix %}{{ Programa.show_img }}') no-repeat center center fixed;">
+    <div class="fixed">
+        <img class="img-fluid" src="{% get_media_prefix %}{{ Programa.show_img }}" alt="Show Image Programa">
     </div>
+
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <h1 class="text-center font-weight-bold display-4"> {{ Programa.nome }} </h1>
 
             <div class="py-3">
-                <audio controls  style="margin: 0 auto; display: block;">
+                <audio controls style="margin: 0 auto; display: block;">
                     <source src="{% get_media_prefix %}/audio/programas/{{ Programa.id }}.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>

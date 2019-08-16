@@ -25,9 +25,9 @@ def categoria_clean(categoria):
 
 
 def corpo_do_email(assunto, texto, email):
-    corpo_do_texto = "Email Enviado da Ouvidoria do Site do CADir - Assunto: " + assunto + "\n"
+    corpo_do_texto = "Email Enviado da Ouvidoria do Site do CADir - Assunto: " + assunto + "<br>"
     if email != "":
-        corpo_do_texto += "O destinatário deseja resposta, envie para o e-mail: " + email + "\n"
+        corpo_do_texto += "O destinatário deseja resposta, envie para o e-mail: " + email + "<br>"
     corpo_do_texto += texto
     return corpo_do_texto
 
@@ -86,7 +86,7 @@ def ouvidoria(request):
         email = EmailMultiAlternatives(
             subject=assunto_enviado,
             body=html_content,
-            from_email="brad@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org",
+            from_email="OuvidoriaCADir@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org",
             to=to_email
         )
 
