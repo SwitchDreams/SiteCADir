@@ -16,7 +16,8 @@ class Evento(models.Model):
     end_day = models.DateField('Dia em que o Evento Acaba')
     isAllDay = models.BooleanField('É o dia inteiro?')
     start = models.TimeField('Horário de começo', help_text='Caso o Evento seja o dia inteiro coloque qualquer horário')
-    end = models.TimeField('Horário de término', help_text='Caso o Evento seja o dia inteiro coloque qualquer horário')
+    end = models.TimeField('Horário de término', help_text='Caso o Evento seja o dia inteiro coloque qualquer horário',
+                           blank=True, null=True)
 
     # Imagem para a página de informações
     show_img = models.ImageField('show_img', upload_to='evento_show_img', default='CADir_logo.png', blank=True)
@@ -33,7 +34,10 @@ class Evento(models.Model):
         if self.start_day == self.end_day:
             evento_text += '.' + ' Dia do evento:' + str(self.start_day)
             if not self.isAllDay:
-                evento_text += '.' + ' Começa as ' + str(self.start) + ', Termina as:' + str(self.end)
+                if self.end:
+                    evento_text += '.' + ' Começa as ' + str(self.start) + ', Termina as:' + str(self.end)
+                else:
+                    evento_text += '.' + ' Começa as ' + str(self.start)
         else:
             evento_text += '.' + ' Começa dia ' + str(self.start_day) + 'e' + 'termina dia' + str(self.end_day)
 

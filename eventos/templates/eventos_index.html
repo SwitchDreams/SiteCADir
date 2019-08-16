@@ -35,22 +35,32 @@
                                     '<div><i class="far fa-clock"></i>' + ' ' + "Dia inteiro" + ' ' +
                                     '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
                             } else {
-                                conteudo = '<div>' + eventObj.description + '</div>' +
-                                    '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
-                                    '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                                if (eventObj.end_time) {
+                                    conteudo = '<div>' + eventObj.description + '</div>' +
+                                        '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + ' - ' + eventObj.end_time + ' ' +
+                                        '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                                } else {
+                                    conteudo = '<div>' + eventObj.description + '</div>' +
+                                        '<div><i class="far fa-clock"></i>' + ' ' + eventObj.start_time + '  ' +
+                                        '<i class="fas fa-map-marker-alt"></i>' + ' ' + eventObj.local + '</div>'
+                                }
+
                             }
-                            $el.popover({
-                                title: eventObj.title,
-                                html: true,
-                                content: conteudo,
-                                trigger:
-                                    'hover',
-                                placement:
-                                    'top',
-                                container:
-                                    'body'
-                            })
-                            ;
+                            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) == false) {
+                                $el.popover({
+                                    title: eventObj.title,
+                                    html: true,
+                                    content: conteudo,
+                                    trigger:
+                                        'hover',
+                                    placement:
+                                        'top',
+                                    container:
+                                        'body'
+                                })
+                                ;
+                            }
+
                         },
 
                         events: [

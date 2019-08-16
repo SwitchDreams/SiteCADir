@@ -14,24 +14,27 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div id="fisrt-slider" class="carousel-item active"
-                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url({% get_media_prefix %}{{ 1Slider.foto }});
-                        background-size: cover">
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(
+                         {% get_media_prefix %}{{ 1Slider.foto }});
+                         background-size: cover">
                 <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Centro Acadêmico</h3>
                 </div>
             </div>
             <div id="second-slider" class="carousel-item"
-                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url({% get_media_prefix %}{{ 2Slider.foto }});
-                        background-size: cover">
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(
+                         {% get_media_prefix %}{{ 2Slider.foto }});
+                         background-size: cover">
                 <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Centro Acadêmico</h3>
                 </div>
             </div>
             <div id="third-slider" class="carousel-item"
-                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url({% get_media_prefix %}{{ 3Slider.foto }});
-                        background-size: cover">
+                 style="background-image:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255,255,255,0.25)), url(
+                         {% get_media_prefix %}{{ 3Slider.foto }});
+                         background-size: cover">
                 <div class="carousel-caption text-center">
                     <h1>Direito UnB</h1>
                     <h3>Centro Acadêmico</h3>
@@ -77,11 +80,11 @@
                     <a href="{% url 'guias:guias_show' pk=8 %}">
                         <h4>Como usar o Matrícula Web</h4>
                     </a>
-                        <hr class="socket">
-                        <p align="justify">Utilize esse guia para entender um pouco mais sobre o Matrícula Web, sobre os
-                            procedimentos da matrícula, do ajuste… Não fique mais perdido antes do semestre começar!
-                            Leia essas dicas e atente-se aos prazos que são fornecidos no Calendário Universitário de
-                            Graduação.</p>
+                    <hr class="socket">
+                    <p align="justify">Utilize esse guia para entender um pouco mais sobre o Matrícula Web, sobre os
+                        procedimentos da matrícula, do ajuste… Não fique mais perdido antes do semestre começar!
+                        Leia essas dicas e atente-se aos prazos que são fornecidos no Calendário Universitário de
+                        Graduação.</p>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 py-2">
                     <img class="img-responsive" src="{% get_media_prefix %}mw.jpeg">
@@ -90,11 +93,12 @@
                     <a href="{% url 'guias:guias_show' pk=10 %}">
                         <h4>Guia dos prédios da UnB</h4>
                     </a>
-                        <hr class="socket">
-                        <p align="justify">Você sabe quais os principais prédios perto da FD? Aproveite esse guia para
-                            conhecer parte do nosso país UnB e de quebra apreciar fotos muito bonitas! Quem sabe esse
-                            guia não te inspira a explorar a arquitetura da nossa Universidade? Ou a se perder pelo campus do
-                            ilustre Darcy Ribeiro?</p>
+                    <hr class="socket">
+                    <p align="justify">Você sabe quais os principais prédios perto da FD? Aproveite esse guia para
+                        conhecer parte do nosso país UnB e de quebra apreciar fotos muito bonitas! Quem sabe esse
+                        guia não te inspira a explorar a arquitetura da nossa Universidade? Ou a se perder pelo campus
+                        do
+                        ilustre Darcy Ribeiro?</p>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 py-2">
                     <img src="{% get_media_prefix %}guias_img/predios/fd_1.png">
@@ -188,7 +192,12 @@
                             {% if evento.isAllDay %}
                                 <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
                             {% else %}
-                                <i class="far fa-clock"></i> {{ evento.start }} - {{ evento.end }}
+                                {% if evento.end %}
+                                    <i class="far fa-clock"></i> {{ evento.start }} -
+                                    {{ evento.end|default_if_none:"não informado" }}
+                                {% else %}
+                                    <i class="far fa-clock"></i> {{ evento.start }}
+                                {% endif %}
                                 <i class="fas fa-map-marker-alt"></i> {{ evento.local }}
                             {% endif %}
                         </div>

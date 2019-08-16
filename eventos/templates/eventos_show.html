@@ -34,14 +34,19 @@
                             {% if Evento.isAllDay %}
                                 <li> O dia todo</li>
                             {% else %}
-                                <li>Das {{ Evento.start }} às {{ Evento.end }}</li>
+                                {% if Evento.end %}
+                                    <li>Das {{ Evento.start }} às {{ Evento.end|default_if_none:"não informado" }}</li>
+                                {% else %}
+                                    <li>Começa às {{ Evento.start }}</li>
+                                {% endif %}
                             {% endif %}
                             <li>Local: {{ Evento.local }}</li>
                         </ul>
 
                         {% if Evento.more_info_img %}
-                            <h2 class="pt-3" > Mais informações?</h2>
-                            <a style="color: #001652; font-size: .9rem;" target="_blank" href="{% get_media_prefix %}{{ Evento.more_info_img }}">Abra aqui</a>
+                            <h2 class="pt-3"> Mais informações?</h2>
+                            <a style="color: #001652; font-size: .9rem;" target="_blank"
+                               href="{% get_media_prefix %}{{ Evento.more_info_img }}">Abra aqui</a>
                         {% endif %}
                     </div>
 
