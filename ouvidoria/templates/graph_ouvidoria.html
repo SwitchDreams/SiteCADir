@@ -22,7 +22,7 @@
                 var getData = function () {
                     var data = {
                     {%for sla in dataGraph%}
-                        {{sla.0}} : {{sla.1}},
+                        "{{sla.0}}" : {{sla.1}},
                     {%endfor%}
                 }
                     ;
