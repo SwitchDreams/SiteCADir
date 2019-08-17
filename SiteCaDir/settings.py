@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%&9k%n#g5r#b66_6##d!os+9ao)s787ea578m(nwl5!cd-v#i9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -142,8 +142,8 @@ STATICFILES_DIRS = (
 # E-mail Configuration
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'postmaster@sandboxd5f011b5c7d4421bb16957131f60fe01.mailgun.org'
-EMAIL_HOST_PASSWORD = '2f8e122b1b0af3afda69b774f281bc8d-afab6073-8319ae88'
+EMAIL_HOST_USER = 'postmaster@sandbox945c8de7e93346148a67362e1e9de121.mailgun.org'
+EMAIL_HOST_PASSWORD = '5a568726ac9f71cf738321b9b5a96ed4-898ca80e-4acdc386'
 EMAIL_USE_TLS = True
 
 # Summernote Config
