@@ -25,7 +25,7 @@ SECRET_KEY = '%&9k%n#g5r#b66_6##d!os+9ao)s787ea578m(nwl5!cd-v#i9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.cadirunb.com.br']
+ALLOWED_HOSTS = ['www.cadirunb.com.br', 'cadirunb.com.br']
 
 
 # Application definition
