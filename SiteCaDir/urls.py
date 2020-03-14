@@ -19,7 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views import defaults
-
+from django.urls import re_path
+from django.views.static import serve
 
 def custom_page_not_found(request):
     return defaults.page_not_found(request, None)
@@ -38,6 +39,12 @@ urlpatterns = [
     # Debbuging url
     path('404/', custom_page_not_found),
 ]
+
+urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()

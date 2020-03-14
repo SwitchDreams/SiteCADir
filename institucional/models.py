@@ -34,6 +34,7 @@ class PrestacaoDeContas(models.Model):
         verbose_name_plural = "Prestações de Conta"
         verbose_name = "Prestação de conta"
 
+
 # Model relacionada as prestações de conta
 class Atas(models.Model):
     nome = models.CharField('Nome', max_length=60, help_text='Nome que aparecerá no site(Institucional)')
@@ -46,6 +47,7 @@ class Atas(models.Model):
     class Meta:
         verbose_name_plural = "Atas"
         verbose_name = "Ata"
+
 
 # Model relacionada ao Texto do histórico do CADir
 class TextoHistorico(models.Model):
@@ -65,6 +67,7 @@ class TextoHistorico(models.Model):
         verbose_name_plural = "Texto do histórico do CADir"
         verbose_name = "Texto do histórico do CADir"
 
+
 # Logos das gestões anteriores
 class Logos(models.Model):
     nome = models.CharField('Nome', max_length=50, help_text='Nome da gestão correspondente')
@@ -79,7 +82,7 @@ class Logos(models.Model):
         verbose_name_plural = "Logos"
         verbose_name = "Logo"
 
-    
+
 # Model Relacionado as estatutos
 class Estatuto(models.Model):
     nome = models.CharField('Nome', max_length=60, help_text='Nome que aparecerá no site(Institucional)')

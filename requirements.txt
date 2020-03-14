@@ -4,3 +4,4 @@ django-summernote==0.8.11.4
 bs4==0.0.1
 gtts==2.0.3
 Pillow==7.0.0
+whitenoise==5.0.1
