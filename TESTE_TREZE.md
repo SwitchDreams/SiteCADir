@@ -1,18 +1,18 @@
-# Testes - Site CaDir
+# Tests - Site CaDir
 
-Este documento descreve como executar os testes do projeto.
+This document describes how to run the project tests.
 
-## Executar Todos os Testes
+## Run All Tests
 
-Para executar todos os testes do projeto:
+To run all project tests:
 
 ```bash
 python manage.py test
 ```
 
-## Executar Testes por App
+## Run Tests by App
 
-Para executar os testes de um app específico:
+To run tests for a specific app:
 
 ```bash
 python manage.py test core
@@ -23,35 +23,35 @@ python manage.py test ouvidoria
 python manage.py test programas
 ```
 
-## Apps Disponíveis
+## Available Apps
 
-- `core` - App principal com modelos e admin
-- `eventos` - Gerenciamento de eventos
-- `guias` - Gestão de guias acadêmicos
-- `institucional` - Conteúdo institucional
-- `ouvidoria` - Sistema de ouvidoria
-- `programas` - Programas acadêmicos
+- `core` - Main app with models and admin
+- `eventos` - Event management
+- `guias` - Academic guides management
+- `institucional` - Institutional content
+- `ouvidoria` - Ombudsman system
+- `programas` - Academic programs
 
 ## Verbose Output
 
-Para ver saída detalhada dos testes:
+To see detailed test output:
 
 ```bash
 python manage.py test --verbosity=2
 ```
 
-## Coverage (Opcional)
+## Coverage (Optional)
 
-Para ver a cobertura dos testes (se estiver configurado):
+To see test coverage (if configured):
 
 ```bash
 coverage run --source='.' manage.py test
 coverage report
 ```
 
-## Arquivos de Testes Existentes
+## Existing Test Files
 
-Os seguintes arquivos de testes já existem no projeto:
+The following test files already exist in the project:
 - `core/tests.py`
 - `eventos/tests.py`
 - `guias/tests.py`
