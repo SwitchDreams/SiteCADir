@@ -14,5 +14,7 @@ urlpatterns = [
     # Path Prestação de cotnas
     path('prestacao_conta', views.contas, name='institucional_contas'),
     # Path atas
-    path('atas', views.atas, name='institucional_atas')
+    path('atas', views.atas, name='institucional_atas'),
+    # Path hino treze
+    path('hino-treze', views.hino_treze, name='institucional_hino_treze')
 ]

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container padding">
+    <div class="jumbotron">
+        <h1 class="text-center">Hino do Treze Futebol Clube</h1>
+        <p class="text-center my-5">O hino oficial do Treze Futebol Clube, o orgulho da Paraíba!</p>
+
+        <div class="py-5">
+            <div class="hino-content">
+                <h2 class="text-center mb-4">Letra do Hino</h2>
+
+                <div class="verse text-center mb-4">
+                    <p class="lead font-weight-bold">Treze! Treze! Treze!</p>
+                    <p>Clube de uma torcida apaixonada</p>
+                    <p>És o orgulho da Paraíba</p>
+                    <p>E da terra formosa e amada</p>
+                </div>
+
+                <div class="verse text-center mb-4">
+                    <p class="lead font-weight-bold">Treze! Treze! Treze!</p>
+                    <p>Teu nome é glória imortal</p>
+                    <p>No coração paraibano</p>
+                    <p>És o símbolo de ideal</p>
+                </div>
+
+                <div class="verse text-center mb-4">
+                    <p class="lead font-weight-bold">Treze! Treze! Treze!</p>
+                    <p>Campeão do campo sagrado</p>
+                    <p>Com garra e determinação</p>
+                    <p>Sempre és o time amado</p>
+                </div>
+
+                <div class="verse text-center mb-4">
+                    <p class="lead font-weight-bold">Treze! Treze! Treze!</p>
+                    <p>Teus filhos te defendem</p>
+                    <p>Com amor e devoção</p>
+                    <p>Onde quer que você esteja</p>
+                    <p>Terás sempre o coração</p>
+                </div>
+
+                <div class="chorus text-center my-5 p-4 bg-light rounded">
+                    <p class="h3 font-weight-bold text-primary">Refão</p>
+                    <p class="lead">Treze! Treze! Treze!</p>
+                    <p class="lead">O clube da nossa gente</p>
+                    <p class="lead">Com tua camisa orgulhosa</p>
+                    <p class="lead">A torcida sempre contente</p>
+                </div>
+
+                <div class="verse text-center mb-4">
+                    <p class="lead font-weight-bold">Treze! Treze! Treze!</p>
+                    <p>Na vitória ou na derrota</p>
+                    <p>Estaremos sempre juntos</p>
+                    <p>Com essa raiva que nos mata</p>
+                    <p>E esse amor que nos conduz</p>
+                </div>
+
+                <div class="verse text-center mb-4">
+                    <p class="lead font-weight-bold">Treze! Treze! Treze!</p>
+                    <p>No estádio Édson Carneiro</p>
+                    <p>Ou em qualquer lugar</p>
+                    <p>O galo forte e guerreiro</p>
+                    <p>Vai sempre lutar</p>
+                </div>
+
+                <div class="verse text-center mb-4">
+                    <p class="lead font-weight-bold">Treze! Treze! Treze!</p>
+                    <p>O mais querido da terra</p>
+                    <p>O orgulho do nosso estado</p>
+                    <p>O clube da nossa glória</p>
+                    <p>O treze é amado!</p>
+                </div>
+
+                <div class="chorus text-center my-5 p-4 bg-light rounded">
+                    <p class="h3 font-weight-bold text-primary">Refão Final</p>
+                    <p class="lead">Treze! Treze! Treze!</p>
+                    <p class="lead">O clube da nossa gente</p>
+                    <p class="lead">Com tua camisa orgulhosa</p>
+                    <p class="lead">A torcida sempre contente</p>
+                    <p class="lead font-weight-bold mt-3">Treze! Treze! Treze!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center ver-mais mt-5">
+            <a class="btn btn-primary" href="{% url 'institucional:institucional_index' %}">
+                <i class="fas fa-arrow-left mr-2"></i>Voltar ao Institucional
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+.hino-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.verse {
+    padding: 1rem 0;
+}
+
+.verse p {
+    margin-bottom: 0.5rem;
+}
+
+.chorus {
+    border-left: 4px solid #007bff;
+}
+
+@media (max-width: 768px) {
+    .hino-content {
+        font-size: 1rem;
+    }
+}
+</style>
+
+{% endblock %}

@@ -60,3 +60,8 @@ def contas(request):
         'Contas': PrestacaoDeContas.objects.all()
     }
     return render(request, template_name, context)
+
+def hino_treze(request):
+    template_name = 'institucional_hino_treze.html'
+    context = {}
+    return render(request, template_name, context)
