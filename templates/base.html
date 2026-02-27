@@ -65,6 +65,12 @@
                     </a>
                 </li>
                 <li class="nav-item px-2">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'institucional_diretoria' %}active{% endif %}"
+                       href="{% url 'institucional:institucional_diretoria' %}">
+                        Diretoria
+                    </a>
+                </li>
+                <li class="nav-item px-2">
                     <a class="nav-link {% if request.resolver_match.url_name == 'eventos_index' %}active{% endif %}"
                        href="{% url 'eventos:eventos_index' %}">
                         Eventos

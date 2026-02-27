@@ -60,3 +60,8 @@ def contas(request):
         'Contas': PrestacaoDeContas.objects.all()
     }
     return render(request, template_name, context)
+
+def diretoria(request):
+    template_name = 'institucional_diretoria.html'
+    context = {}
+    return render(request, template_name, context)
