@@ -16,5 +16,5 @@ urlpatterns = [
     # Path atas
     path('atas', views.atas, name='institucional_atas'),
     # Path diretoria
-    path('diretoria', views.diretoria, name='institucional_diretoria')
+    path('diretorias', views.diretoria, name='institucional_diretoria')
 ]
