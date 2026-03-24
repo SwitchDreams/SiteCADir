@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'eventos',
     'guias',
     'institucional',
+    'direito',
     # ---------------------------------
 ]
 
