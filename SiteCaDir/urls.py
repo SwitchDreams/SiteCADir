@@ -35,6 +35,7 @@ urlpatterns = [
     path('eventos/', include('eventos.urls', namespace='eventos')),
     path('guias/', include('guias.urls', namespace='guias')),
     path('institucional/', include('institucional.urls', namespace='institucional')),
+    path('direito/', include('direito.urls', namespace='direito')),
 
     # Debbuging url
     path('404/', custom_page_not_found),
